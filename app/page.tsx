@@ -2,12 +2,112 @@
 import { Disc3, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogDescription,
+} from "@/components/ui/dialog"
+
+// Musician data with detailed information
+const musicians = [
+    {
+        id: 1,
+        name: "ALEX",
+        instrument: "1. Flügelhorn",
+        image: "/musicians/alex.jpg",
+        monoImage: "/musicians/alex_mono.jpg",
+        description: "Alex ist ein erfahrener Flügelhornist mit über 15 Jahren Erfahrung in der Blasmusik. Er ist bekannt für seinen warmen, melodischen Ton und seine präzise Technik.",
+        experience: "15+ Jahre",
+        specialties: ["Klassische Blasmusik", "Moderne Arrangements", "Solo-Performances"],
+        achievements: ["Mehrere Preise bei Musikwettbewerben", "Leitung von Jugendensembles", "Workshop-Leiter"]
+    },
+    {
+        id: 2,
+        name: "DOMINIK",
+        instrument: "2. Flügelhorn",
+        image: "/musicians/dominik.jpg",
+        monoImage: "/musicians/dominik_mono.jpg",
+        description: "Dominik bringt Energie und Leidenschaft in jede Aufführung. Seine virtuose Trompetentechnik und sein rhythmisches Gefühl machen ihn zu einem unverzichtbaren Mitglied des Ensembles.",
+        experience: "12 Jahre",
+        specialties: ["Jazz-Improvisation", "Klassische Trompete", "Ensemble-Spiel"],
+        achievements: ["Ausbildung am Konservatorium", "Mitglied in mehreren Orchestern", "Solo-Auftritte bei Festivals"]
+    },
+    {
+        id: 3,
+        name: "PHILIPP",
+        instrument: "Trompete",
+        image: "/musicians/philipp.jpg",
+        monoImage: "/musicians/philipp_mono.jpg",
+        description: "Philipp ist ein vielseitiger Trompeter, der sowohl klassische als auch moderne Stücke mit Perfektion interpretiert. Seine musikalische Sensibilität bereichert jedes Stück.",
+        experience: "10 Jahre",
+        specialties: ["Barockmusik", "Moderne Kompositionen", "Kammermusik"],
+        achievements: ["Studium der Musikpädagogik", "Konzertmeister-Erfahrung", "Kompositionspreise"]
+    },
+    {
+        id: 4,
+        name: "MICHAEL",
+        instrument: "Akkordeon",
+        image: "/musicians/michael.jpg",
+        monoImage: "/musicians/michael_mono.jpg",
+        description: "Michael ist der Obmann des Vereins und ein versierter Akkordeonist. Seine Führungsqualitäten und musikalische Expertise prägen den charakteristischen Sound von Roah Raschla Reloaded.",
+        experience: "20+ Jahre",
+        specialties: ["Volksmusik", "Tango", "Moderne Akkordeonliteratur"],
+        achievements: ["Vereinsobmann seit 2015", "Meisterkurse bei internationalen Künstlern", "CD-Produktionen"]
+    },
+    {
+        id: 5,
+        name: "ALEX",
+        instrument: "Schlagzeug",
+        image: "/musicians/alex_2.jpg",
+        monoImage: "/musicians/alex_2_mono.jpg",
+        description: "Alex (Akkordeon) ist ein virtuoser Spieler, der das traditionelle Instrument mit modernen Techniken verbindet. Seine Interpretationen sind geprägt von tiefem Verständnis für die Musiktradition.",
+        experience: "18 Jahre",
+        specialties: ["Wiener Walzer", "Moderne Akkordeonmusik", "Improvisation"],
+        achievements: ["Internationale Konzerttätigkeit", "Lehraufträge an Musikschulen", "Kompositionsaufträge"]
+    },
+    {
+        id: 6,
+        name: "FABIAN",
+        instrument: "Tenor",
+        image: "/musicians/fabian.jpg",
+        monoImage: "/musicians/fabian_mono.jpg",
+        description: "Fabian bringt frischen Wind und innovative Ideen ins Ensemble. Seine moderne Herangehensweise an das Akkordeon erweitert das Repertoire um zeitgenössische Klänge.",
+        experience: "8 Jahre",
+        specialties: ["Elektronische Musik", "Fusion-Stile", "Experimentelle Klänge"],
+        achievements: ["Studium der elektronischen Musik", "Festival-Auftritte", "Kollaborationen mit DJs"]
+    },
+    {
+        id: 7,
+        name: "ALEX",
+        instrument: "Bariton",
+        image: "/musicians/alex_3.jpg",
+        monoImage: "/musicians/alex_3_mono.jpg",
+        description: "Alex (Akkordeon #3) ist ein Meister der traditionellen österreichischen Volksmusik. Seine authentische Interpretation und sein tiefes Verständnis für die lokalen Musiktraditionen sind unvergleichlich.",
+        experience: "25 Jahre",
+        specialties: ["Österreichische Volksmusik", "Alpenländische Musik", "Traditionelle Tänze"],
+        achievements: ["Träger des Goldenen Ehrenzeichens", "Buchautor über Volksmusik", "Dokumentation traditioneller Musik"]
+    },
+    {
+        id: 8,
+        name: "RICHI",
+        instrument: "Tuba",
+        image: "/musicians/richi.jpg",
+        monoImage: "/musicians/richi_mono.jpg",
+        description: "Richi ist das jüngste Mitglied des Ensembles und bringt neue Perspektiven und Energie mit. Seine Begeisterung für Musik und sein schneller Lernfortschritt machen ihn zu einem wertvollen Ensemblemitglied.",
+        experience: "5 Jahre",
+        specialties: ["Moderne Pop-Arrangements", "Jugendmusik", "Cross-Over-Projekte"],
+        achievements: ["Jugend-Musikpreis 2023", "Teilnahme an internationalen Workshops", "Social Media Musikprojekte"]
+    }
+]
 
 export default function RoahRaschlaReloaded() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [imageModalOpen, setImageModalOpen] = useState(false);
     const [modalImage, setModalImage] = useState('');
     const [scrollY, setScrollY] = useState(0);
+    const [selectedMusician, setSelectedMusician] = useState<typeof musicians[0] | null>(null);
 
     const openModal = (imageSrc: string) => {
         setModalImage(imageSrc);
@@ -360,141 +460,35 @@ export default function RoahRaschlaReloaded() {
                             </h3>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                                 {/* Musician Cards */}
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/alex.jpg"
-                                            alt="Alex"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                {musicians.map((musician) => (
+                                    <div 
+                                        key={musician.id}
+                                        className="text-center group cursor-pointer"
+                                        onClick={() => setSelectedMusician(musician)}
+                                    >
+                                        <div className="relative mb-6 overflow-hidden rounded-2xl">
+                                            {/* Regular Image */}
+                                            <img
+                                                src={musician.image}
+                                                alt={musician.name}
+                                                className="w-full h-80 object-cover group-hover:opacity-0 transition-opacity duration-300"
+                                            />
+                                            {/* Mono Image - shown on hover */}
+                                            <img
+                                                src={musician.monoImage}
+                                                alt={musician.name}
+                                                className="absolute inset-0 w-full h-80 object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        </div>
+                                        <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
+                                            {musician.name}
+                                        </h4>
+                                        <p className="font-script text-lg text-red-800 font-semibold">
+                                            {musician.instrument}
+                                        </p>
                                     </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        ALEX
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Flügelhorn
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/dominik.jpg"
-                                            alt="Dominik"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        DOMINIK
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Trompete
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/philipp.jpg"
-                                            alt="Philipp"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        PHILIPP
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Trompete
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/michael.jpg"
-                                            alt="Michael"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        MICHAEL
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Akkordeon
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/alex_2.jpg"
-                                            alt="Michael"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        ALEX
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Akkordeon
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/fabian.jpg"
-                                            alt="Michael"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        FABIAN
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Akkordeon
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/alex_3.jpg"
-                                            alt="Michael"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        ALEX
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Akkordeon
-                                    </p>
-                                </div>
-
-                                <div className="text-center group">
-                                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                                        <img
-                                            src="/musicians/richi.jpg"
-                                            alt="Michael"
-                                            className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </div>
-                                    <h4 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                                        RICHI
-                                    </h4>
-                                    <p className="font-script text-lg text-red-800 font-semibold">
-                                        Akkordeon
-                                    </p>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -667,7 +661,7 @@ export default function RoahRaschlaReloaded() {
                                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                                     <div className="flex items-start justify-between mb-3">
                                         <h4 className="font-glitch-sm text-lg text-gray-900 tracking-wide">
-                                            ORF AUFNAHME – „ÖSTERREICH HEUTE"
+                                            ORF AUFNAHME – "ÖSTERREICH HEUTE"
                                         </h4>
                                         <span className="bg-blue-100 text-blue-800 text-xs font-glitch-sm px-2.5 py-0.5 rounded-full tracking-wider">
                                             RECORDING
@@ -675,7 +669,7 @@ export default function RoahRaschlaReloaded() {
                                     </div>
                                     <p className="text-gray-600 mb-4">
                                         Fernsehauftritt für die Sendung
-                                        „Österreich heute" – Musikbeitrag im
+                                        "Österreich heute" – Musikbeitrag im
                                         Rahmen der regionalen
                                         Kulturberichterstattung.
                                     </p>
@@ -1018,6 +1012,73 @@ export default function RoahRaschlaReloaded() {
                         </div>
                     </div>
                 </footer>
+
+                {/* Musician Dialog */}
+                <Dialog open={!!selectedMusician} onOpenChange={() => setSelectedMusician(null)}>
+                    <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+                        {selectedMusician && (
+                            <DialogHeader>
+                                <DialogTitle className="font-script text-3xl text-red-800 text-center mb-4">
+                                    {selectedMusician.name}
+                                </DialogTitle>
+                                <div className="space-y-6">
+                                    <div className="text-center">
+                                        <img
+                                            src={selectedMusician.image}
+                                            alt={selectedMusician.name}
+                                            className="w-48 h-48 object-cover rounded-2xl mx-auto mb-4 shadow-lg"
+                                        />
+                                        <h3 className="font-script text-2xl text-red-800 font-semibold mb-2">
+                                            {selectedMusician.instrument}
+                                        </h3>
+                                        <p className="text-gray-600 mb-4">
+                                            {selectedMusician.description}
+                                        </p>
+                                    </div>
+                                    
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h4 className="font-glitch-sm text-lg text-gray-900 mb-3 tracking-wide">
+                                                ERFAHRUNG
+                                            </h4>
+                                            <p className="text-gray-600 font-semibold">
+                                                {selectedMusician.experience}
+                                            </p>
+                                        </div>
+                                        
+                                        <div>
+                                            <h4 className="font-glitch-sm text-lg text-gray-900 mb-3 tracking-wide">
+                                                SPEZIALISIERUNGEN
+                                            </h4>
+                                            <ul className="space-y-1">
+                                                {selectedMusician.specialties.map((specialty, index) => (
+                                                    <li key={index} className="text-gray-600 flex items-center">
+                                                        <span className="w-2 h-2 bg-red-800 rounded-full mr-2"></span>
+                                                        {specialty}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 className="font-glitch-sm text-lg text-gray-900 mb-3 tracking-wide">
+                                            AUSZEICHNUNGEN & ERFOLGE
+                                        </h4>
+                                        <ul className="space-y-2">
+                                            {selectedMusician.achievements.map((achievement, index) => (
+                                                <li key={index} className="text-gray-600 flex items-start">
+                                                    <span className="w-2 h-2 bg-yellow-800 rounded-full mr-2 mt-2 flex-shrink-0"></span>
+                                                    {achievement}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </DialogHeader>
+                        )}
+                    </DialogContent>
+                </Dialog>
 
                 {/* Image Modal */}
                 {imageModalOpen && (
