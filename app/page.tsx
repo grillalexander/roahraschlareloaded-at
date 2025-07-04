@@ -79,14 +79,14 @@ export default function RoahRaschlaReloaded() {
                                         onClick={() =>
                                             scrollToSection('events')
                                         }
-                                        className="text-gray-600 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
+                                        className="text-gray-600 hover:text-yellow-800 transition-colors duration-200 cursor-pointer font-medium">
                                         Events
                                     </a>
                                     <a
                                         onClick={() =>
                                             scrollToSection('galerie')
                                         }
-                                        className="text-gray-600 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
+                                        className="text-gray-600 hover:text-blue-800 transition-colors duration-200 cursor-pointer font-medium">
                                         Galerie
                                     </a>
                                     <a
@@ -103,22 +103,35 @@ export default function RoahRaschlaReloaded() {
                                     href="https://www.facebook.com/roahraschla_reloaded/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-600 hover:text-red-800 transition-colors duration-200">
-                                    <i className="fab fa-facebook"></i>
+                                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
+                                    title="Facebook">
+                                    <Facebook className="h-4 w-4" />
                                 </a>
                                 <a
                                     href="https://www.instagram.com/roahraschla_reloaded/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-600 hover:text-red-800 transition-colors duration-200">
-                                    <i className="fab fa-instagram"></i>
+                                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-800 hover:text-white transition-all duration-300"
+                                    title="Instagram">
+                                    <Instagram className="h-4 w-4" />
+                                </a>
+                                <a
+                                    href="https://www.tiktok.com/@roahraschla_reloaded?_t=ZN-8xkIeFBlYgA&_r=1"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-yellow-800 hover:text-white transition-all duration-300"
+                                    title="TikTok">
+                                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                    </svg>
                                 </a>
                                 <a
                                     href="https://open.spotify.com/user/31fas3j4lxldgcus5xzmpo7ypqdi"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-gray-600 hover:text-red-800 transition-colors duration-200">
-                                    <i className="fab fa-spotify"></i>
+                                    className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
+                                    title="Spotify">
+                                    <Disc3 className="h-4 w-4" />
                                 </a>
                             </div>
                             {/* Mobile menu button */}
@@ -149,12 +162,12 @@ export default function RoahRaschlaReloaded() {
                                 </a>
                                 <a
                                     onClick={() => scrollToSection('events')}
-                                    className="block text-gray-600 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
+                                    className="block text-gray-600 hover:text-yellow-800 transition-colors duration-200 cursor-pointer font-medium">
                                     Events
                                 </a>
                                 <a
                                     onClick={() => scrollToSection('galerie')}
-                                    className="block text-gray-600 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
+                                    className="block text-gray-600 hover:text-blue-800 transition-colors duration-200 cursor-pointer font-medium">
                                     Galerie
                                 </a>
                                 <a
@@ -162,6 +175,44 @@ export default function RoahRaschlaReloaded() {
                                     className="block text-gray-600 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
                                     Kontakt
                                 </a>
+                                
+                                {/* Social Media Icons for Mobile */}
+                                <div className="flex justify-end space-x-4 pt-4 border-t border-gray-200 mt-4">
+                                    <a
+                                        href="https://www.facebook.com/roahraschla_reloaded/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
+                                        title="Facebook">
+                                        <Facebook className="h-4 w-4" />
+                                    </a>
+                                    <a
+                                        href="https://www.instagram.com/roahraschla_reloaded/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-800 hover:text-white transition-all duration-300"
+                                        title="Instagram">
+                                        <Instagram className="h-4 w-4" />
+                                    </a>
+                                    <a
+                                        href="https://www.tiktok.com/@roahraschla_reloaded?_t=ZN-8xkIeFBlYgA&_r=1"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-yellow-800 hover:text-white transition-all duration-300"
+                                        title="TikTok">
+                                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        href="https://open.spotify.com/user/31fas3j4lxldgcus5xzmpo7ypqdi"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
+                                        title="Spotify">
+                                        <Disc3 className="h-4 w-4" />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -202,7 +253,7 @@ export default function RoahRaschlaReloaded() {
                         <div className="text-center">
                             <button
                                 onClick={() => scrollToSection('ueber-uns')}
-                                className="inline-flex items-center px-8 py-4 bg-gray-600 text-white font-medium rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 text-lg tracking-wide">
+                                className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 text-base tracking-wide">
                                 Mehr erfahren
                                 <i className="fas fa-arrow-right ml-2"></i>
                             </button>
