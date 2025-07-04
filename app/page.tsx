@@ -12,27 +12,24 @@ import {
 
 // Musician data with detailed information
 const musicians = [
+
     {
         id: 1,
-        name: "ALEX",
+        name: "DOMINIK",
         instrument: "1. Flügelhorn",
-        image: "/musicians/alex.jpg",
-        monoImage: "/musicians/alex_mono.jpg",
-        description: "Alex ist ein erfahrener Flügelhornist mit über 15 Jahren Erfahrung in der Blasmusik. Er ist bekannt für seinen warmen, melodischen Ton und seine präzise Technik.",
-        experience: "15+ Jahre",
-        specialties: ["Klassische Blasmusik", "Moderne Arrangements", "Solo-Performances"],
-        achievements: ["Mehrere Preise bei Musikwettbewerben", "Leitung von Jugendensembles", "Workshop-Leiter"]
+        image: "/musicians/dominik.jpg",
+        monoImage: "/musicians/dominik_mono.jpg",
+        description: "Haweditutn \n\nSeit 2005 is is Flügelhorn mei treuer Begleiter – und heit nimma aus mein Lebm wegzudenken und die Musi is für mi weit mehr als ein Hobby: Leidenschaft, Ausdruck und pure Lebensfreude. Als Drahtzieher unserer Band bring i ned nur Töne zum Klingen, sondern a Menschen zsaum.",
+
     },
     {
         id: 2,
-        name: "DOMINIK",
+        name: "ALEX",
         instrument: "2. Flügelhorn",
-        image: "/musicians/dominik.jpg",
-        monoImage: "/musicians/dominik_mono.jpg",
-        description: "Dominik bringt Energie und Leidenschaft in jede Aufführung. Seine virtuose Trompetentechnik und sein rhythmisches Gefühl machen ihn zu einem unverzichtbaren Mitglied des Ensembles.",
-        experience: "12 Jahre",
-        specialties: ["Jazz-Improvisation", "Klassische Trompete", "Ensemble-Spiel"],
-        achievements: ["Ausbildung am Konservatorium", "Mitglied in mehreren Orchestern", "Solo-Auftritte bei Festivals"]
+        image: "/musicians/alex.jpg",
+        monoImage: "/musicians/alex_mono.jpg",
+        description: "",
+
     },
     {
         id: 3,
@@ -40,66 +37,57 @@ const musicians = [
         instrument: "Trompete",
         image: "/musicians/philipp.jpg",
         monoImage: "/musicians/philipp_mono.jpg",
-        description: "Philipp ist ein vielseitiger Trompeter, der sowohl klassische als auch moderne Stücke mit Perfektion interpretiert. Seine musikalische Sensibilität bereichert jedes Stück.",
-        experience: "10 Jahre",
-        specialties: ["Barockmusik", "Moderne Kompositionen", "Kammermusik"],
-        achievements: ["Studium der Musikpädagogik", "Konzertmeister-Erfahrung", "Kompositionspreise"]
+        description: "Griaß eich\n\nMit 6 Jahren hab ich meine ersten Töne auf der Trompete gespielt – und seitdem lässt mich das Instrument nicht mehr los. Zwar darf das Flügelhorn auch mal mitspielen, aber ganz ehrlich: Die Trompete ist und bleibt mei Liebling!",
+
     },
+
     {
         id: 4,
-        name: "MICHAEL",
-        instrument: "Akkordeon",
-        image: "/musicians/michael.jpg",
-        monoImage: "/musicians/michael_mono.jpg",
-        description: "Michael ist der Obmann des Vereins und ein versierter Akkordeonist. Seine Führungsqualitäten und musikalische Expertise prägen den charakteristischen Sound von Roah Raschla Reloaded.",
-        experience: "20+ Jahre",
-        specialties: ["Volksmusik", "Tango", "Moderne Akkordeonliteratur"],
-        achievements: ["Vereinsobmann seit 2015", "Meisterkurse bei internationalen Künstlern", "CD-Produktionen"]
+        name: "RICHI",
+        instrument: "Tuba",
+        image: "/musicians/richi.jpg",
+        monoImage: "/musicians/richi_mono.jpg",
+        description: "Griaß eich\n\nVor fast 13 Jahren hob i zum ersten Mal die Tuba auf – anfangs nur a netter Zeitvertreib, jetzt is’s viel mehr: a Leidenschaft, die mi bis heit ned loslässt. Mit jedem Ton bring i die tiefen Frequenzen zum Vibrieren – denn ohne g’scheites Bassfundament geht bei uns gar nix!Nur der Walzer… naja, der und i – des is a Hass-Lieb! Drei Viertel Takt, zwei linke Füß und meistens koa Luft mehr – aber i bleib dran!",
+
     },
+
     {
         id: 5,
         name: "ALEX",
         instrument: "Schlagzeug",
         image: "/musicians/alex_2.jpg",
         monoImage: "/musicians/alex_2_mono.jpg",
-        description: "Alex (Akkordeon) ist ein virtuoser Spieler, der das traditionelle Instrument mit modernen Techniken verbindet. Seine Interpretationen sind geprägt von tiefem Verständnis für die Musiktradition.",
-        experience: "18 Jahre",
-        specialties: ["Wiener Walzer", "Moderne Akkordeonmusik", "Improvisation"],
-        achievements: ["Internationale Konzerttätigkeit", "Lehraufträge an Musikschulen", "Kompositionsaufträge"]
+        description: ""
+
     },
     {
         id: 6,
         name: "FABIAN",
-        instrument: "Tenor",
+        instrument: "Bariton",
         image: "/musicians/fabian.jpg",
         monoImage: "/musicians/fabian_mono.jpg",
-        description: "Fabian bringt frischen Wind und innovative Ideen ins Ensemble. Seine moderne Herangehensweise an das Akkordeon erweitert das Repertoire um zeitgenössische Klänge.",
-        experience: "8 Jahre",
-        specialties: ["Elektronische Musik", "Fusion-Stile", "Experimentelle Klänge"],
-        achievements: ["Studium der elektronischen Musik", "Festival-Auftritte", "Kollaborationen mit DJs"]
+        description: ""
+
     },
     {
         id: 7,
         name: "ALEX",
-        instrument: "Bariton",
+        instrument: "Tenor",
         image: "/musicians/alex_3.jpg",
         monoImage: "/musicians/alex_3_mono.jpg",
-        description: "Alex (Akkordeon #3) ist ein Meister der traditionellen österreichischen Volksmusik. Seine authentische Interpretation und sein tiefes Verständnis für die lokalen Musiktraditionen sind unvergleichlich.",
-        experience: "25 Jahre",
-        specialties: ["Österreichische Volksmusik", "Alpenländische Musik", "Traditionelle Tänze"],
-        achievements: ["Träger des Goldenen Ehrenzeichens", "Buchautor über Volksmusik", "Dokumentation traditioneller Musik"]
+        description: ""
+
     },
     {
         id: 8,
-        name: "RICHI",
-        instrument: "Tuba",
-        image: "/musicians/richi.jpg",
-        monoImage: "/musicians/richi_mono.jpg",
-        description: "Richi ist das jüngste Mitglied des Ensembles und bringt neue Perspektiven und Energie mit. Seine Begeisterung für Musik und sein schneller Lernfortschritt machen ihn zu einem wertvollen Ensemblemitglied.",
-        experience: "5 Jahre",
-        specialties: ["Moderne Pop-Arrangements", "Jugendmusik", "Cross-Over-Projekte"],
-        achievements: ["Jugend-Musikpreis 2023", "Teilnahme an internationalen Workshops", "Social Media Musikprojekte"]
-    }
+        name: "MICHAEL",
+        instrument: "Akkordeon",
+        image: "/musicians/michael.jpg",
+        monoImage: "/musicians/michael_mono.jpg",
+        description: ""
+
+    },
+
 ]
 
 export default function RoahRaschlaReloaded() {
@@ -165,7 +153,7 @@ export default function RoahRaschlaReloaded() {
                                 <div className="ml-10 flex items-baseline space-x-8">
                                     <a
                                         onClick={() => scrollToSection('home')}
-                                        className="text-gray-900 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
+                                        className="text-gray-600 hover:text-red-800 transition-colors duration-200 cursor-pointer font-medium">
                                         Home
                                     </a>
                                     <a
@@ -200,7 +188,7 @@ export default function RoahRaschlaReloaded() {
                             </div>
                             <div className="flex space-x-4">
                                 <a
-                                    href="https://www.facebook.com/roahraschla_reloaded/"
+                                    href="https://www.facebook.com/profile.php?id=61578069538211"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
@@ -216,7 +204,7 @@ export default function RoahRaschlaReloaded() {
                                     <Instagram className="h-4 w-4" />
                                 </a>
                                 <a
-                                    href="https://www.tiktok.com/@roahraschla_reloaded?_t=ZN-8xkIeFBlYgA&_r=1"
+                                    href="https://www.tiktok.com/@roahraschlareloaded?_t=ZN-8xmMiL4rDGA&_r=1"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-yellow-800 hover:text-white transition-all duration-300"
@@ -279,7 +267,7 @@ export default function RoahRaschlaReloaded() {
                                 {/* Social Media Icons for Mobile */}
                                 <div className="flex justify-end space-x-4 pt-4 border-t border-gray-200 mt-4">
                                     <a
-                                        href="https://www.facebook.com/roahraschla_reloaded/"
+                                        href="https://www.facebook.com/profile.php?id=61578069538211"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
@@ -295,7 +283,7 @@ export default function RoahRaschlaReloaded() {
                                         <Instagram className="h-4 w-4" />
                                     </a>
                                     <a
-                                        href="https://www.tiktok.com/@roahraschla_reloaded?_t=ZN-8xkIeFBlYgA&_r=1"
+                                        href="https://www.tiktok.com/@roahraschlareloaded?_t=ZN-8xmMiL4rDGA&_r=1"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-yellow-800 hover:text-white transition-all duration-300"
@@ -332,7 +320,7 @@ export default function RoahRaschlaReloaded() {
                     <div className="absolute inset-0 bg-black/40"></div>
 
                     {/* Top spacer */}
-                    <div className="flex-1 flex items-start justify-center pt-32">
+                    <div className="flex-1 flex items-start justify-center pt-24 md:pt-32">
                         <div className="relative text-center px-6 max-w-4xl mx-auto text-white z-10">
                             <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
                                 <span className="font-script font-bold text-red-800 block mb-4">
@@ -342,7 +330,7 @@ export default function RoahRaschlaReloaded() {
                                     & Leidenschaft
                                 </span>
                             </h1>
-                            <p className="font-script text-2xl md:text-3xl mb-12 max-w-2xl mx-auto leading-relaxed opacity-90 text-blue-800">
+                            <p className="font-script text-lg md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed opacity-90 text-blue-800 -mt-1 md:mt-0">
                                 Roah Raschla Reloaded - etwas Schilf gewickelt
                             </p>
                         </div>
@@ -369,25 +357,22 @@ export default function RoahRaschlaReloaded() {
                                 Über uns
                             </h2>
                             <div className="w-24 h-1 bg-red-800 mx-auto mb-12"></div>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                                Lernen Sie die 8 frischgeraschelten Musiker kennen
-                            </p>
+                   
                         </div>
 
                         <div className="mb-20">
                             <div className="mb-20">
                                 <div className="max-w-4xl mx-auto text-center">
                                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
-                                        Roah Raschla Reloaded ist ein
-                                        traditionsreicher Musikverein, der seit
-                                        Jahrzehnten die Blasmusik in unserer
-                                        Region pflegt und weiterentwickelt.
-                                        Unser Ensemble besteht aus
-                                        leidenschaftlichen Musikern aller
-                                        Altersgruppen, die gemeinsam ein
-                                        vielfältiges Repertoire von klassischer
-                                        Blasmusik bis hin zu modernen
-                                        Arrangements darbieten.
+                                    Wir sind die RoahRaschlaReloaded aus dem Mittelburgenland, in der Nähe des Neusiedler Sees – eine böhmische Partie, die die Blasmusik in unserer Region mit Herz und guter Laune am Leben hält. Unsere acht Musiker, jung bis jung geblieben, bringen alles auf die Bühne, was das Blasmusikherz höherschlagen lässt: von traditionellen Märschen bis zu schwungvollen Polkas.
+
+
+
+
+
+
+
+                                      
                                     </p>
                                     <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
                                         Wir sind stolz auf unsere musikalische
@@ -412,9 +397,7 @@ export default function RoahRaschlaReloaded() {
                                                 TRADITION
                                             </h4>
                                             <p className="text-gray-600">
-                                                Seit Generationen pflegen wir
-                                                die österreichische
-                                                Blasmusiktradition
+                                            Bei uns ist Blasmusik eine lebendige Tradition, die von Generation zu Generation weitergegeben wird.
                                             </p>
                                         </div>
                                         <div className="text-center">
@@ -447,9 +430,7 @@ export default function RoahRaschlaReloaded() {
                                                 LEIDENSCHAFT
                                             </h4>
                                             <p className="text-gray-600">
-                                                Mit Herzblut und Begeisterung
-                                                musizieren wir für unser
-                                                Publikum
+                                            Mit Herzblut musizieren wir für unser Publikum, weil gute Musik Freude macht und Menschen verbindet.
                                             </p>
                                         </div>
                                     </div>
@@ -471,7 +452,7 @@ export default function RoahRaschlaReloaded() {
                                             <img
                                                 src={musician.image}
                                                 alt={musician.name}
-                                                className="w-full h-80 object-cover group-hover:opacity-0 transition-opacity duration-300"
+                                                className="w-full h-80 object-cover group-hover:opacity-0 tra@nsition-opacity duration-300"
                                             />
                                             {/* Mono Image - shown on hover */}
                                             <img
@@ -510,45 +491,12 @@ export default function RoahRaschlaReloaded() {
                                 KOMMENDE VERANSTALTUNGEN
                             </h3>
                             <div className="space-y-8">
+                        
                                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <div className="flex flex-col md:flex-row gap-8">
                                         <div className="md:w-1/3">
                                             <img
-                                                src="/event-lanterns.jpg"
-                                                alt="Dämmerschoppen Müllendorf Lindenfest"
-                                                className="w-full h-48 object-cover rounded-xl"
-                                            />
-                                        </div>
-                                        <div className="md:w-2/3">
-                                            <h4 className="text-xl text-gray-900 mb-3">
-                                                DÄMMERSCHOPPEN MÜLLENDORF
-                                                LINDENFEST
-                                            </h4>
-                                            <p className="text-gray-600 mb-4 leading-relaxed">
-                                                Probe für das traditionelle
-                                                Lindenfest in Müllendorf. Wir
-                                                bereiten uns auf einen
-                                                stimmungsvollen Auftritt vor.
-                                            </p>
-                                            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                                                <span>
-                                                    <i className="fas fa-calendar mr-2"></i>
-                                                    13. Juli 2025, 12:00
-                                                </span>
-                                                <span>
-                                                    <i className="fas fa-music mr-2"></i>
-                                                    Probe
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                                    <div className="flex flex-col md:flex-row gap-8">
-                                        <div className="md:w-1/3">
-                                            <img
-                                                src="/event-lanterns.jpg"
+                                                src="/event_marz.jpeg"
                                                 alt="Frühschoppen MV Marz"
                                                 className="w-full h-48 object-cover rounded-xl"
                                             />
@@ -558,65 +506,47 @@ export default function RoahRaschlaReloaded() {
                                                 FRÜHSCHOPPEN MV MARZ
                                             </h4>
                                             <p className="text-gray-600 mb-4 leading-relaxed">
-                                                Auftritt beim traditionellen
-                                                Frühschoppen des Musikvereins
-                                                Marz. Ein geselliger Vormittag
-                                                mit Blasmusik.
+                                            Wir gestalten den traditionellen Frühschoppen des Musikvereins Marz
+                                            musikalisch mit. Genießt einen gemütlichen Vormittag voller Blasmusik
+                                            und guter Stimmung.
                                             </p>
                                             <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                                                 <span>
                                                     <i className="fas fa-calendar mr-2"></i>
                                                     24. August 2025, 11:00
                                                 </span>
-                                                <span>
-                                                    <i className="fas fa-map-marker-alt mr-2"></i>
-                                                    Marz
-                                                </span>
-                                                <span>
-                                                    <i className="fas fa-music mr-2"></i>
-                                                    Auftritt
-                                                </span>
+                                                
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
-
                                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                                     <div className="flex flex-col md:flex-row gap-8">
                                         <div className="md:w-1/3">
                                             <img
-                                                src="/event-lanterns.jpg"
-                                                alt="Auftrittsanfrage in Stotzing"
+                                                src="/event_oslip.jpg"
+                                                alt="Oktoberfest MV Oslip"
                                                 className="w-full h-48 object-cover rounded-xl"
                                             />
                                         </div>
                                         <div className="md:w-2/3">
                                             <h4 className="text-xl text-gray-900 mb-3">
-                                                AUFTRITTSANFRAGE IN STOTZING
+                                            Oktoberfest MV Oslip
                                             </h4>
                                             <p className="text-gray-600 mb-4 leading-relaxed">
-                                                Probe für eine mögliche
-                                                Auftrittsanfrage in Stotzing.
-                                                Wir bereiten uns auf
-                                                verschiedene Repertoire-Stücke
-                                                vor.
+                                            Wir spielen beim Oktoberfest des Musikvereins Oslip. Freut euch auf ein stimmungsvolles Musikerfest mit bester Unterhaltung!
                                             </p>
                                             <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                                                 <span>
                                                     <i className="fas fa-calendar mr-2"></i>
-                                                    27. September 2025, 19:00
+                                                    07. September 2025, 14:30
                                                 </span>
-                                                <span>
-                                                    <i className="fas fa-map-marker-alt mr-2"></i>
-                                                    Stotzing
-                                                </span>
-                                                <span>
-                                                    <i className="fas fa-music mr-2"></i>
-                                                    Probe
-                                                </span>
+                                                
                                             </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -632,9 +562,6 @@ export default function RoahRaschlaReloaded() {
                                         <h4 className="font-glitch-sm text-lg text-gray-900 tracking-wide">
                                             REMUSHOF - WEINFEST JAGSCHITZ
                                         </h4>
-                                        <span className="bg-red-100 text-red-800 text-xs font-glitch-sm px-2.5 py-0.5 rounded-full tracking-wider">
-                                            PERFORMANCE
-                                        </span>
                                     </div>
                                     <p className="text-gray-600 mb-4">
                                         Gemütlicher Auftritt beim
@@ -663,9 +590,6 @@ export default function RoahRaschlaReloaded() {
                                         <h4 className="font-glitch-sm text-lg text-gray-900 tracking-wide">
                                             ORF AUFNAHME – "ÖSTERREICH HEUTE"
                                         </h4>
-                                        <span className="bg-blue-100 text-blue-800 text-xs font-glitch-sm px-2.5 py-0.5 rounded-full tracking-wider">
-                                            RECORDING
-                                        </span>
                                     </div>
                                     <p className="text-gray-600 mb-4">
                                         Fernsehauftritt für die Sendung
@@ -694,9 +618,6 @@ export default function RoahRaschlaReloaded() {
                                         <h4 className="font-glitch-sm text-lg text-gray-900 tracking-wide">
                                             KIRTAG MÖRBISCH – AUFTRITT CSÁRDA
                                         </h4>
-                                        <span className="bg-red-100 text-red-800 text-xs font-glitch-sm px-2.5 py-0.5 rounded-full tracking-wider">
-                                            PERFORMANCE
-                                        </span>
                                     </div>
                                     <p className="text-gray-600 mb-4">
                                         Stimmungsvolle Musik beim traditionellen
@@ -742,12 +663,24 @@ export default function RoahRaschlaReloaded() {
                             {/* Regular Images */}
                             {[
                                 {
-                                    src: '/gallery/rrr_1.jpg',
-                                    alt: 'Unsere Musiker',
+                                    src: '/gallery/rrr_7.jpg',
+                                    alt: 'Auftritt bei Veranstaltung',
+                                },
+                                {
+                                    src: '/gallery/rrr_6.jpg',
+                                    alt: 'Auftritt bei Veranstaltung',
                                 },
                                 {
                                     src: '/gallery/rrr_2.jpg',
-                                    alt: 'Probe der Musikgruppe',
+                                    alt: 'Auftritt bei Veranstaltung',
+                                },
+                                {
+                                    src: '/gallery/rrr_1.jpg',
+                                    alt: 'Auftritt bei Veranstaltung',
+                                },
+                                {
+                                    src: '/gallery/rrr_2.jpg',
+                                    alt: 'Auftritt bei Veranstaltung',
                                 },
                                 {
                                     src: '/gallery/rrr_3.jpg',
@@ -755,28 +688,15 @@ export default function RoahRaschlaReloaded() {
                                 },
                                 {
                                     src: '/gallery/rrr_4.jpg',
-                                    alt: 'Gruppenfoto der Musiker',
+                                    alt: 'Auftritt bei Veranstaltung',
                                 },
                                 {
                                     src: '/gallery/rrr_5.jpg',
-                                    alt: 'Musikinstrumente im Einsatz',
+                                    alt: 'Auftritt bei Veranstaltung',
                                 },
-                                {
-                                    src: '/gallery/rrr_6.jpg',
-                                    alt: 'Dirigent bei der Arbeit',
-                                },
-                                {
-                                    src: '/gallery/rrr_7.jpg',
-                                    alt: 'Festliche Veranstaltung',
-                                },
-                                {
-                                    src: '/gallery/rrr_8.jpg',
-                                    alt: 'Begeistertes Publikum',
-                                },
-                                {
-                                    src: '/gallery/rrr_9.jpg',
-                                    alt: 'Am Akkordeon spielen',
-                                },
+                              
+                       
+         
                             ].map((image, index) => (
                                 <div
                                     key={index}
@@ -806,9 +726,7 @@ export default function RoahRaschlaReloaded() {
                         </div>
 
                         <div className="max-w-2xl mx-auto">
-                            <h3 className="heading-script text-xl text-gray-900 mb-8 text-center">
-                                Nehmen Sie Kontakt auf
-                            </h3>
+                          
                             <div className="space-y-6">
                                 <div className="flex items-start space-x-4">
                                     <div
@@ -888,9 +806,7 @@ export default function RoahRaschlaReloaded() {
                                     />
                                 </div>
                                 <p className="text-gray-600 mb-6 leading-relaxed">
-                                    Seit 1920 bringen wir Musik in unsere
-                                    Gemeinde und pflegen die Tradition der
-                                    Blasmusik mit Leidenschaft und Hingabe.
+                                Neu belebte böhmische Blasmusik mit frischem Schwung und viel Leidenschaft – altbewährt, aber keineswegs von gestern.
                                 </p>
                                 <div className="flex space-x-4">
                                     <a
@@ -905,9 +821,19 @@ export default function RoahRaschlaReloaded() {
                                         href="https://www.instagram.com/roahraschla_reloaded/"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-800 hover:text-white transition-all duration-300"
+                                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-800 hover:text-white transition-all duration-300"
                                         title="Instagram">
                                         <Instagram className="h-5 w-5" />
+                                    </a>
+                                    <a
+                                        href="https://www.tiktok.com/@roahraschlareloaded?_t=ZN-8xmMiL4rDGA&_r=1"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-yellow-800 hover:text-white transition-all duration-300"
+                                        title="TikTok">
+                                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                        </svg>
                                     </a>
                                     <a
                                         href="https://open.spotify.com/user/31fas3j4lxldgcus5xzmpo7ypqdi"
@@ -1031,49 +957,17 @@ export default function RoahRaschlaReloaded() {
                                         <h3 className="font-script text-2xl text-red-800 font-semibold mb-2">
                                             {selectedMusician.instrument}
                                         </h3>
-                                        <p className="text-gray-600 mb-4">
-                                            {selectedMusician.description}
-                                        </p>
-                                    </div>
-                                    
-                                    <div className="grid md:grid-cols-2 gap-6">
-                                        <div>
-                                            <h4 className="font-glitch-sm text-lg text-gray-900 mb-3 tracking-wide">
-                                                ERFAHRUNG
-                                            </h4>
-                                            <p className="text-gray-600 font-semibold">
-                                                {selectedMusician.experience}
-                                            </p>
-                                        </div>
-                                        
-                                        <div>
-                                            <h4 className="font-glitch-sm text-lg text-gray-900 mb-3 tracking-wide">
-                                                SPEZIALISIERUNGEN
-                                            </h4>
-                                            <ul className="space-y-1">
-                                                {selectedMusician.specialties.map((specialty, index) => (
-                                                    <li key={index} className="text-gray-600 flex items-center">
-                                                        <span className="w-2 h-2 bg-red-800 rounded-full mr-2"></span>
-                                                        {specialty}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <h4 className="font-glitch-sm text-lg text-gray-900 mb-3 tracking-wide">
-                                            AUSZEICHNUNGEN & ERFOLGE
-                                        </h4>
-                                        <ul className="space-y-2">
-                                            {selectedMusician.achievements.map((achievement, index) => (
-                                                <li key={index} className="text-gray-600 flex items-start">
-                                                    <span className="w-2 h-2 bg-yellow-800 rounded-full mr-2 mt-2 flex-shrink-0"></span>
-                                                    {achievement}
-                                                </li>
+                                        <div className="text-gray-600 mb-4 text-center">
+                                            {selectedMusician.description.split('\n').map((line, index) => (
+                                                <div key={index} className="mb-2">
+                                                    {line}
+                                                </div>
                                             ))}
-                                        </ul>
+                                        </div>
                                     </div>
+                                    
+                 
+                            
                                 </div>
                             </DialogHeader>
                         )}
