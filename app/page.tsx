@@ -170,35 +170,43 @@ export default function RoahRaschlaReloaded() {
                 {/* Hero Section with Parallax */}
                 <section
                     id="home"
-                    className="relative min-h-screen flex items-center justify-center overflow-hidden">
+                    className="relative min-h-screen flex flex-col justify-between overflow-hidden">
                     <div
                         className="absolute inset-0 bg-cover bg-center"
                         style={{
-                            backgroundImage: `url('/hero-accordion.jpg')`,
+                            backgroundImage: `url('/all.jpg')`,
                             transform: `translateY(${scrollY * 0.5}px)`,
                             willChange: 'transform',
                         }}></div>
                     <div className="absolute inset-0 bg-black/40"></div>
 
-                    <div className="relative text-center px-6 max-w-4xl mx-auto text-white z-10">
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
-                            <span className="font-script font-bold text-yellow-400 block mb-4">
-                                Tradition
-                            </span>
-                            <span className="font-script text-4xl md:text-6xl lg:text-7xl text-white">
-                                & Leidenschaft
-                            </span>
-                        </h1>
-                        <p className="font-script text-2xl md:text-3xl mb-12 max-w-2xl mx-auto leading-relaxed opacity-90 text-yellow-200">
-                            Roah Raschla Reloaded - Musik aus dem Herzen des
-                            Burgenlandes
-                        </p>
-                        <button
-                            onClick={() => scrollToSection('ueber-uns')}
-                            className="inline-flex items-center px-8 py-4 bg-red-800 text-white font-medium rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-105 text-lg tracking-wide">
-                            Mehr erfahren
-                            <i className="fas fa-arrow-right ml-2"></i>
-                        </button>
+                    {/* Top spacer */}
+                    <div className="flex-1 flex items-start justify-center pt-32">
+                        <div className="relative text-center px-6 max-w-4xl mx-auto text-white z-10">
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
+                                <span className="font-script font-bold text-red-800 block mb-4">
+                                    Tradition
+                                </span>
+                                <span className="font-script text-4xl md:text-6xl lg:text-7xl text-yellow-800">
+                                    & Leidenschaft
+                                </span>
+                            </h1>
+                            <p className="font-script text-2xl md:text-3xl mb-12 max-w-2xl mx-auto leading-relaxed opacity-90 text-blue-800">
+                                Roah Raschla Reloaded - etwas Schilf gewickelt
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Button at bottom */}
+                    <div className="relative z-10 pb-8 md:pb-12 lg:pb-16">
+                        <div className="text-center">
+                            <button
+                                onClick={() => scrollToSection('ueber-uns')}
+                                className="inline-flex items-center px-8 py-4 bg-gray-600 text-white font-medium rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 text-lg tracking-wide">
+                                Mehr erfahren
+                                <i className="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
                     </div>
                 </section>
 
@@ -211,8 +219,7 @@ export default function RoahRaschlaReloaded() {
                             </h2>
                             <div className="w-24 h-1 bg-red-800 mx-auto mb-12"></div>
                             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                                Lernen Sie die talentierten Musiker unseres
-                                Vereins kennen
+                                Lernen Sie die 8 frischgeraschelten Musiker kennen
                             </p>
                         </div>
 
@@ -446,10 +453,10 @@ export default function RoahRaschlaReloaded() {
                 <section id="events" className="py-32 bg-gray-50">
                     <div className="max-w-6xl mx-auto px-6 lg:px-8">
                         <div className="text-center mb-20">
-                            <h2 className="font-script text-5xl md:text-7xl font-bold text-red-800 mb-4">
+                            <h2 className="font-script text-5xl md:text-7xl font-bold text-yellow-800 mb-4">
                                 Events
                             </h2>
-                            <div className="w-24 h-1 bg-red-800 mx-auto mb-12"></div>
+                            <div className="w-24 h-1 bg-yellow-800 mx-auto mb-12"></div>
                         </div>
 
                         {/* Upcoming Events */}
@@ -672,13 +679,13 @@ export default function RoahRaschlaReloaded() {
                 </section>
 
                 {/* Galerie Section */}
-                <section id="galerie" className="py-32 bg-white">
+                <section id="galerie" className="py-32">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8">
                         <div className="text-center mb-20">
-                            <h2 className="font-script text-5xl md:text-7xl font-bold text-red-800 mb-4">
+                            <h2 className="font-script text-5xl md:text-7xl font-bold text-blue-800 mb-4">
                                 Galerie
                             </h2>
-                            <div className="w-24 h-1 bg-red-800 mx-auto mb-12"></div>
+                            <div className="w-24 h-1 bg-blue-800 mx-auto mb-12"></div>
                             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                                 Eindrücke von unseren Auftritten und
                                 Veranstaltungen

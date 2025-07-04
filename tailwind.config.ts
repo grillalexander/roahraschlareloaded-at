@@ -46,6 +46,12 @@ const config: Config = {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
+  			yellow: {
+  				'800': '#FFDE00 !important'
+  			},
+  						blue: {
+				'800': '#2D245F !important'
+			},
   			chart: {
   				'1': 'hsl(var(--chart-1))',
   				'2': 'hsl(var(--chart-2))',

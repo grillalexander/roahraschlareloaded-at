@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Roah Raschla Reloaded',
-  description: 'Musik aus dem Herzen des Burgenlandes',
+  description: 'etwas Schilf gewickelt',
 }
 
 export default function RootLayout({
