@@ -66,8 +66,7 @@ const musicians = [
         instrument: "Bariton",
         image: "/musicians/fabian.jpg",
         monoImage: "/musicians/fabian_mono.jpg",
-        description: ""
-
+        description: "Servus, griass eich und hallo!\n\nI bin da Fabian alias da Fabi und spü seit meim 7 Lebensjoa is Tenorhorn. De Posaun is zwoa erst 13 Joa späta in mei Lebn kumma, owa i spü beide Instrumente gleich gern. Ned nur i hab an Schnauza in dera Partie und außerdem bin i a ana vo zwa de aussn Niederösterreich kemman!"
     },
     {
         id: 7,
@@ -541,6 +540,62 @@ export default function RoahRaschlaReloaded() {
                                                 <span>
                                                     <i className="fas fa-calendar mr-2"></i>
                                                     07. September 2025, 14:30
+                                                </span>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <div className="flex flex-col md:flex-row gap-8">
+                                        <div className="md:w-1/3">
+                                            <img
+                                                src="/event_moerbisch.jpg"
+                                                alt="Kirtag MV Mörbisch"
+                                                className="w-full h-48 object-cover rounded-xl"
+                                            />
+                                        </div>
+                                        <div className="md:w-2/3">
+                                            <h4 className="text-xl text-gray-900 mb-3">
+                                            Kirtag MV Mörbisch
+                                            </h4>
+                                            <p className="text-gray-600 mb-4 leading-relaxed">
+                                            Die RoahRaschlaReloaded sind wie jedes Jahr wieder beim Kirtag des Musikvereins Mörbisch. Wir freuen uns auf ein tolles Fest mit guter Musik und Stimmung.
+
+                                            </p>
+                                            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                                                <span>
+                                                    <i className="fas fa-calendar mr-2"></i>
+                                                    12. September 2025, 19:00
+                                                </span>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                    <div className="flex flex-col md:flex-row gap-8">
+                                        <div className="md:w-1/3">
+                                            <img
+                                                src="/event_gansburgenland.jpg"
+                                                alt="GAN(Z)S BURGENLAND"
+                                                className="w-full h-48 object-cover rounded-xl"
+                                            />
+                                        </div>
+                                        <div className="md:w-2/3">
+                                            <h4 className="text-xl text-gray-900 mb-3">
+                                            GAN(Z)S BURGENLAND
+                                            </h4>
+                                            <p className="text-gray-600 mb-4 leading-relaxed">
+                                            Beim kulturellen Festival „Gans am See“ in der Freistadt Rust sorgt RoahRaschlaReloaded mit traditioneller Blasmusik für echte Feststimmung – echt, unverkennbar und mitreißend!
+
+                                            </p>
+                                            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                                                <span>
+                                                    <i className="fas fa-calendar mr-2"></i>
+                                                    04. Oktober 2025, 16:00
                                                 </span>
                                                 
                                             </div>
