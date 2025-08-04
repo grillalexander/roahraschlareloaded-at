@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontaktformular</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .form-container {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .form-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #333;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #555;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e1e5e9;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background-color: #f8f9fa;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #667eea;
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      }
+
+      .form-input:invalid {
+        border-color: #e74c3c;
+      }
+
+      .form-input:valid {
+        border-color: #27ae60;
+      }
+
+      .submit-button {
+        width: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 0.875rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+      }
+
+      .submit-button:active {
+        transform: translateY(0);
+      }
+
+      .required {
+        color: #e74c3c;
+      }
+
+      @media (max-width: 480px) {
+        .form-container {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1 class="form-title">Kontaktformular</h1>
+
+      <form action="#" method="POST" novalidate>
+        <div class="form-group">
+          <label for="name" class="form-label">
+            Name <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-input"
+            required
+            minlength="2"
+            maxlength="50"
+            placeholder="Ihr vollständiger Name"
+            aria-describedby="name-error"
+          />
+          <div id="name-error" class="error-message" role="alert"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">
+            E-Mail <span class="required">*</span>
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-input"
+            required
+            placeholder="ihre.email@beispiel.de"
+            aria-describedby="email-error"
+          />
+          <div id="email-error" class="error-message" role="alert"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">
+            Passwort <span class="required">*</span>
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-input"
+            required
+            minlength="8"
+            placeholder="Mindestens 8 Zeichen"
+            aria-describedby="password-error"
+          />
+          <div id="password-error" class="error-message" role="alert"></div>
+        </div>
+
+        <button type="submit" class="submit-button">Absenden</button>
+      </form>
+    </div>
+
+    <script>
+      // Form validation and user experience enhancements
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        const inputs = document.querySelectorAll(".form-input");
+
+        // Real-time validation
+        inputs.forEach((input) => {
+          input.addEventListener("blur", validateField);
+          input.addEventListener("input", clearError);
+        });
+
+        // Form submission
+        form.addEventListener("submit", handleSubmit);
+
+        function validateField(e) {
+          const field = e.target;
+          const errorElement = document.getElementById(field.id + "-error");
+
+          if (!field.checkValidity()) {
+            showError(field, errorElement, getErrorMessage(field));
+          } else {
+            clearError(field, errorElement);
+          }
+        }
+
+        function clearError(field, errorElement) {
+          if (errorElement) {
+            errorElement.textContent = "";
+            errorElement.style.display = "none";
+          }
+          field.classList.remove("error");
+        }
+
+        function showError(field, errorElement, message) {
+          if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = "block";
+            errorElement.style.color = "#e74c3c";
+            errorElement.style.fontSize = "0.8rem";
+            errorElement.style.marginTop = "0.25rem";
+          }
+          field.classList.add("error");
+        }
+
+        function getErrorMessage(field) {
+          if (field.validity.valueMissing) {
+            return "Dieses Feld ist erforderlich.";
+          }
+          if (field.validity.typeMismatch) {
+            return "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
+          }
+          if (field.validity.tooShort) {
+            return `Mindestens ${field.minLength} Zeichen erforderlich.`;
+          }
+          if (field.validity.tooLong) {
+            return `Maximal ${field.maxLength} Zeichen erlaubt.`;
+          }
+          return "Bitte überprüfen Sie Ihre Eingabe.";
+        }
+
+        function handleSubmit(e) {
+          e.preventDefault();
+
+          let isValid = true;
+          inputs.forEach((input) => {
+            if (!input.checkValidity()) {
+              isValid = false;
+              const errorElement = document.getElementById(input.id + "-error");
+              showError(input, errorElement, getErrorMessage(input));
+            }
+          });
+
+          if (isValid) {
+            // Simulate form submission
+            const submitButton = document.querySelector(".submit-button");
+            submitButton.textContent = "Wird gesendet...";
+            submitButton.disabled = true;
+
+            setTimeout(() => {
+              alert("Formular erfolgreich gesendet!");
+              form.reset();
+              submitButton.textContent = "Absenden";
+              submitButton.disabled = false;
+            }, 2000);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
