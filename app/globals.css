@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import fonts - loaded via Next.js optimization */
+@font-face {
+  font-family: "Dancing Script";
+  src:
+    url("/fonts/dancing-script-regular.woff2") format("woff2"),
+    url("/fonts/dancing-script-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src:
+    url("/fonts/dancing-script-bold.woff2") format("woff2"),
+    url("/fonts/dancing-script-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font utility classes */
+.font-script {
+  font-family: "Dancing Script", cursive;
+}
+
+.font-body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Brand-specific styles */
+.brand-roah {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+}
+
+.brand-reloaded {
+  font-family: "Dancing Script", cursive;
+  font-weight: 400;
+}
+
+/* Heading styles */
+.heading-script {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+}
+
+.heading-script-sm {
+  font-family: "Dancing Script", cursive;
+  font-weight: 500;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -91,4 +143,32 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes slideOutRight {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  to {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
+}
+
+@keyframes gentleBreathe {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.01);
+  }
+}
+
+.animate-slide-out-right {
+  animation: slideOutRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-gentle-breathe {
+  animation: gentleBreathe 3s ease-in-out infinite;
 }
