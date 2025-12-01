@@ -379,14 +379,14 @@ export default function RoahRaschlaReloaded() {
           <div className="flex-1 flex items-start justify-center pt-24 md:pt-32">
             <div className="relative text-center px-6 max-w-4xl mx-auto text-white z-10">
               <h1 className="text-5xl md:text-7xl lg:text-8xl mb-8 leading-tight">
-                <span className="font-script font-bold text-red-700 block mb-4 drop-shadow-lg">
+                <span className="font-script font-bold text-red-800 block mb-4">
                   Tradition
                 </span>
-                <span className="font-script text-4xl md:text-6xl lg:text-7xl text-yellow-600 drop-shadow-lg">
+                <span className="font-script text-4xl md:text-6xl lg:text-7xl text-yellow-800">
                   & Leidenschaft
                 </span>
               </h1>
-              <p className="font-script text-lg md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed text-blue-200 drop-shadow-lg -mt-1 md:mt-0">
+              <p className="font-script text-lg md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed opacity-90 text-blue-800 -mt-1 md:mt-0">
                 Roah Raschla Reloaded - etwas Schilf gewickelt
               </p>
             </div>
