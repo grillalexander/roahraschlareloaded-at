@@ -41,12 +41,12 @@ const musicians = [
 
   {
     id: 4,
-    name: "RICHI",
+    name: "MORITZ",
     instrument: "Tuba",
-    image: "/musicians/richi.jpg",
-    monoImage: "/musicians/richi_mono.jpg",
+    image: "/musicians/moritz.jpg",
+    monoImage: "/musicians/moritz_mono.jpg",
     description:
-      "Griaß eich\n\nVor fast 13 Jahren hob i zum ersten Mal die Tuba auf – anfangs nur a netter Zeitvertreib, jetzt is’s viel mehr: a Leidenschaft, die mi bis heit ned loslässt. Mit jedem Ton bring i die tiefen Frequenzen zum Vibrieren – denn ohne g’scheites Bassfundament geht bei uns gar nix!Nur der Walzer… naja, der und i – des is a Hass-Lieb! Drei Viertel Takt, zwei linke Füß und meistens koa Luft mehr – aber i bleib dran!",
+     "Griaß eich! Ih bin da Moritz!\n\nIs erste moi ah Tuba in da Hand gehalten hob ih ois \"Spätberufener\" mit 17 Joah und seitdem loss ih sie fost nimmer aus.\n\nMittlerweile verstehn si mei Tuba und ih scho so guad, dass ma vor an Joah gsogt hom, wir fongan gemeinsam an da JHP zu studieren an.\n\nFois wer gern im Sommer am Ruster Güterweg spazieren geht, konns leicht sein, dass er mi beim Outdoor-proben in unserm Heurigen hört.",
   },
 
   {
