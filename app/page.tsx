@@ -555,38 +555,7 @@ export default function RoahRaschlaReloaded() {
               <div className="space-y-8">
     
 
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    <div className="md:w-1/3">
-                      <img
-                        src="/event_rust.jpeg"
-                        alt="GAN(Z)S BURGENLAND"
-                        className="w-full h-48 object-cover rounded-xl"
-                        width={400}
-                        height={192}
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="md:w-2/3">
-                      <h4 className="text-xl text-gray-900 mb-3">
-                        Ruster Adventmeile
-                      </h4>
-                      <p className="text-gray-600 mb-4 leading-relaxed">
-                        Die stimmungsvolle Adventmeile in der Freistadt Rust
-                        wird von RoahRaschlaReloaded mit traditionellen
-                        Weihnachtsliedern und Blasmusik bereichert – warm,
-                        herzlich und voller Vorfreude auf die festliche
-                        Weihnachtszeit!
-                      </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <i className="fas fa-calendar mr-2"></i>
-                          20. Dezember 2025, 17:00 - 18:00
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+         
 
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
@@ -619,6 +588,11 @@ export default function RoahRaschlaReloaded() {
                     </div>
                   </div>
                 </div>
+
+
+
+
+
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
@@ -645,6 +619,41 @@ export default function RoahRaschlaReloaded() {
                         <span>
                           <i className="fas fa-calendar mr-2"></i>
                           24. Juni 2026, 14:00 - 19:00
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                     
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3 flex items-center justify-center bg-black rounded-xl h-48">
+                      <img
+                          src="/event_hinzkunz.jpg"
+                          alt="Musikstammtisch"
+                          className="max-w-full max-h-full object-contain"
+                          width={400}
+                          height={106}
+                          loading="lazy"
+                        />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                      Musikstammtisch im Hinz&Kunz
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Wir spielen beim Musikstammtisch in der Bar Hinz&Kunz 
+                        in Wien am Karlsplatz 1/5, 1010 Wien. Die gemütliche Bar 
+                        ist bekannt für ihre erfrischenden Drinks und 
+                        regelmäßigen musikalischen Veranstaltungen.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span>
+                          <i className="fas fa-calendar mr-2"></i>
+                          10. November 2026, 20:00 - 24:00
                         </span>
                       </div>
                     </div>
