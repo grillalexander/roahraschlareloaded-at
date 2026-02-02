@@ -5,6 +5,15 @@ import Loader from "@/components/loader";
 export const metadata: Metadata = {
   title: "RoahRaschlaReloaded",
   description: "etwas Schilf gewickelt",
+  openGraph: {
+    title: "RoahRaschlaReloaded",
+    description: "etwas Schilf gewickelt",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RoahRaschlaReloaded",
+    description: "etwas Schilf gewickelt",
+  },
 };
 
 export default function RootLayout({
@@ -31,18 +40,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         {/* Preload hero image for LCP */}
-        <link
-          rel="preload"
-          href="/all.jpg"
-          as="image"
-          fetchPriority="high"
-        />
+        <link rel="preload" href="/all.jpg" as="image" fetchPriority="high" />
         {/* Preload logo */}
-        <link
-          rel="preload"
-          href="/logo-full.jpg"
-          as="image"
-        />
+        <link rel="preload" href="/logo-full.jpg" as="image" />
       </head>
       <body>
         <Loader />

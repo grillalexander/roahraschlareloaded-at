@@ -46,7 +46,7 @@ const musicians = [
     image: "/musicians/moritz.jpg",
     monoImage: "/musicians/moritz_mono.jpg",
     description:
-     "Griaß eich! Ih bin da Moritz!\n\nIs erste moi ah Tuba in da Hand gehalten hob ih ois \"Spätberufener\" mit 17 Joah und seitdem loss ih sie fost nimmer aus.\n\nMittlerweile verstehn si mei Tuba und ih scho so guad, dass ma vor an Joah gsogt hom, wir fongan gemeinsam an da JHP zu studieren an.\n\nFois wer gern im Sommer am Ruster Güterweg spazieren geht, konns leicht sein, dass er mi beim Outdoor-proben in unserm Heurigen hört.",
+      'Griaß eich! Ih bin da Moritz!\n\nIs erste moi ah Tuba in da Hand gehalten hob ih ois "Spätberufener" mit 17 Joah und seitdem loss ih sie fost nimmer aus.\n\nMittlerweile verstehn si mei Tuba und ih scho so guad, dass ma vor an Joah gsogt hom, wir fongan gemeinsam an da JHP zu studieren an.\n\nFois wer gern im Sommer am Ruster Güterweg spazieren geht, konns leicht sein, dass er mi beim Outdoor-proben in unserm Heurigen hört.',
   },
 
   {
@@ -105,7 +105,10 @@ export default function RoahRaschlaReloaded() {
     setImageModalOpen(false);
   };
 
-  const scrollToSection = (sectionId: string, e?: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToSection = (
+    sectionId: string,
+    e?: React.MouseEvent<HTMLAnchorElement>
+  ) => {
     e?.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
@@ -258,7 +261,11 @@ export default function RoahRaschlaReloaded() {
           </div>
           {/* Mobile menu */}
           {mobileMenuOpen && (
-            <nav id="mobile-menu" className="md:hidden bg-white border-t border-gray-100" aria-label="Mobile Navigation">
+            <nav
+              id="mobile-menu"
+              className="md:hidden bg-white border-t border-gray-100"
+              aria-label="Mobile Navigation"
+            >
               <div className="px-6 py-4 space-y-2">
                 <a
                   href="#home"
@@ -387,7 +394,7 @@ export default function RoahRaschlaReloaded() {
                 </span>
               </h1>
               <p className="font-script text-lg md:text-2xl lg:text-3xl mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed opacity-90 text-blue-800 -mt-1 md:mt-0">
-                Roah Raschla Reloaded - etwas Schilf gewickelt
+                RoahRaschlaReloaded - etwas Schilf gewickelt
               </p>
             </div>
           </div>
@@ -553,10 +560,6 @@ export default function RoahRaschlaReloaded() {
                 KOMMENDE VERANSTALTUNGEN
               </h3>
               <div className="space-y-8">
-    
-
-         
-
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
@@ -589,10 +592,6 @@ export default function RoahRaschlaReloaded() {
                   </div>
                 </div>
 
-
-
-
-
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
@@ -611,9 +610,9 @@ export default function RoahRaschlaReloaded() {
                       </h4>
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         Der Musikverein St. Margarethen im Burgenland lädt
-                        herzlich zum Johannikirtag am 24. Juni 2026
-                        ein! Das ganze findet auf dem Festgelände und Halle beim Musikvereinshaus in
-                        der Kirchengasse 33 statt.
+                        herzlich zum Johannikirtag am 24. Juni 2026 ein! Das
+                        ganze findet auf dem Festgelände und Halle beim
+                        Musikvereinshaus in der Kirchengasse 33 statt.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
@@ -625,29 +624,26 @@ export default function RoahRaschlaReloaded() {
                   </div>
                 </div>
 
-
-
-                     
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3 flex items-center justify-center bg-black rounded-xl h-48">
                       <img
-                          src="/event_hinzkunz.jpg"
-                          alt="Musikstammtisch"
-                          className="max-w-full max-h-full object-contain"
-                          width={400}
-                          height={106}
-                          loading="lazy"
-                        />
+                        src="/event_hinzkunz.jpg"
+                        alt="Musikstammtisch"
+                        className="max-w-full max-h-full object-contain"
+                        width={400}
+                        height={106}
+                        loading="lazy"
+                      />
                     </div>
                     <div className="md:w-2/3">
                       <h4 className="text-xl text-gray-900 mb-3">
-                      Musikstammtisch im Hinz&Kunz
+                        Musikstammtisch im Hinz&Kunz
                       </h4>
                       <p className="text-gray-600 mb-4 leading-relaxed">
-                        Wir spielen beim Musikstammtisch in der Bar Hinz&Kunz 
-                        in Wien am Karlsplatz 1/5, 1010 Wien. Die gemütliche Bar 
-                        ist bekannt für ihre erfrischenden Drinks und 
+                        Wir spielen beim Musikstammtisch in der Bar Hinz&Kunz in
+                        Wien am Karlsplatz 1/5, 1010 Wien. Die gemütliche Bar
+                        ist bekannt für ihre erfrischenden Drinks und
                         regelmäßigen musikalischen Veranstaltungen.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
@@ -668,14 +664,16 @@ export default function RoahRaschlaReloaded() {
                 VERGANGENE VERANSTALTUNGEN
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-2xl p-6 shadow-lg md:col-span-2">
+                <div className="bg-white rounded-2xl p-6 shadow-lg md:col-span-2">
                   <div className="flex items-start justify-between mb-3">
                     <h4 className="font-glitch-sm text-lg text-gray-900 tracking-wide">
-                    GANS BURGENLAND GENUSSMARKT
+                      GANS BURGENLAND GENUSSMARKT
                     </h4>
                   </div>
                   <p className="text-gray-600 mb-4">
-                  In der Ruster Altstadt fand der Gans Burgenland Genussmarkt statt. Wir hatten die Ehre, bei diesem Event zu spielen und die Besucher mit unserer Musik zu unterhalten.
+                    In der Ruster Altstadt fand der Gans Burgenland Genussmarkt
+                    statt. Wir hatten die Ehre, bei diesem Event zu spielen und
+                    die Besucher mit unserer Musik zu unterhalten.
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
@@ -955,7 +953,7 @@ export default function RoahRaschlaReloaded() {
                 <div className="flex items-center mb-4">
                   <img
                     src="/logo-full.jpg"
-                    alt="Roah Raschla Reloaded Logo"
+                    alt="RoahRaschlaReloaded Logo"
                     className="h-16 w-auto"
                     width={200}
                     height={64}
@@ -1105,7 +1103,7 @@ export default function RoahRaschlaReloaded() {
                 </Link>
               </div>
               <p className="text-gray-600">
-                &copy; 2025 Roah Raschla Reloaded. Alle Rechte vorbehalten.
+                &copy; 2025 RoahRaschlaReloaded. Alle Rechte vorbehalten.
               </p>
             </div>
           </div>
