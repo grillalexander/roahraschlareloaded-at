@@ -107,7 +107,7 @@ export default function RoahRaschlaReloaded() {
 
   const scrollToSection = (
     sectionId: string,
-    e?: React.MouseEvent<HTMLAnchorElement>
+    e?: React.MouseEvent<HTMLAnchorElement>,
   ) => {
     e?.preventDefault();
     const element = document.getElementById(sectionId);
@@ -618,6 +618,37 @@ export default function RoahRaschlaReloaded() {
                         <span>
                           <i className="fas fa-calendar mr-2"></i>
                           24. Juni 2026, 14:00 - 19:00
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        src="/event_moerbisch.jpg"
+                        alt="Kirtag in Mörbisch"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Kirtag in Mörbisch
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Beim traditionellen Kirtag in Mörbisch am See sorgen wir
+                        mit unserer Blasmusik für festliche Stimmung – ein
+                        herzliches Fest in der Seegemeinde mit Musik,
+                        Geselligkeit und burgenländischem Flair.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span>
+                          <i className="fas fa-calendar mr-2"></i>
+                          13. September 2026, 16:00 - 19:00
                         </span>
                       </div>
                     </div>
