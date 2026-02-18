@@ -585,13 +585,12 @@ export default function RoahRaschlaReloaded() {
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
                           <i className="fas fa-calendar mr-2"></i>
-                          15. Februar 2026, 11:30 - 14:00
+                          15. Februar 2026, 11:30 - 14:00 Uhr
                         </span>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
@@ -617,7 +616,49 @@ export default function RoahRaschlaReloaded() {
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
                           <i className="fas fa-calendar mr-2"></i>
-                          24. Juni 2026, 14:00 - 19:00
+                          24. Juni 2026, 14:00 - 19:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        src="/Weinroas-Illmitz_090©Burgenland Tourismus_Hafenscher.jpg"
+                        alt="RoahRaschlaReloaded bei der Woodstock Weinroas in Apetlon"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                      <p className="text-xs text-gray-500 mt-2">
+                        Foto: © Burgenland Tourismus / Hafenscher
+                      </p>
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Woodstock Weinroas
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Von 24. bis 26. April 2026 findet die Woodstock Weinroas
+                        in Illmitz und Apetlon im Burgenland statt. Wir spielen
+                        am Sonntag, 26. April 2026, von 16:30 bis 18:30 Uhr beim
+                        „zum Fröhlichen Arbeiter“ in Apetlon – Wein, Musik und
+                        Seewinkel-Flair.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span>
+                          <i className="fas fa-calendar mr-2" aria-hidden></i>
+                          26. April 2026, 16:30 – 18:30 Uhr
+                        </span>
+                        <span>
+                          <i
+                            className="fas fa-map-marker-alt mr-2"
+                            aria-hidden
+                          ></i>
                         </span>
                       </div>
                     </div>
@@ -648,7 +689,7 @@ export default function RoahRaschlaReloaded() {
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
                           <i className="fas fa-calendar mr-2"></i>
-                          13. September 2026, 16:00 - 19:00
+                          13. September 2026, 16:00 - 19:00 Uhr
                         </span>
                       </div>
                     </div>
