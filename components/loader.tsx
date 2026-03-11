@@ -21,7 +21,7 @@ export default function Loader() {
     const startHideAnimation = () => {
       if (hideAnimationStarted) return;
       hideAnimationStarted = true;
-      
+
       // First, stop the breathing animation
       setStopAnimation(true);
       // Small delay to let animation stop, then start fading
@@ -110,4 +110,3 @@ export default function Loader() {
     </div>
   );
 }
-
