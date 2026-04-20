@@ -637,6 +637,39 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
+                        src="/event_steinbrunn.jpeg"
+                        alt="Feuerwehrfest in Steinbrunn"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Feuerwehrfest in Steinbrunn
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Wir spielen beim Feuerwehrfest der Freiwilligen
+                        Feuerwehr Steinbrunn am 7. Juni 2026 von 11:00 bis 14:00
+                        Uhr. Das Fest findet im um das Feuerwehrhaus in
+                        Steinbrunn.
+                        <br />
+                        Wir freuen uns auf euch!
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span>
+                          <i className="fas fa-calendar mr-2"></i>
+                          7. Juni 2026, 11:00 - 14:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
                         src="/event_stmargarethen.jpg"
                         alt="Johannikirtag in St. Margarethen"
                         className="w-full h-48 object-cover rounded-xl"
@@ -865,6 +898,14 @@ export default function RoahRaschlaReloaded() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {/* Regular Images */}
               {[
+                {
+                  src: "/gallery/rrr_17.jpg",
+                  alt: "Auftritt bei Veranstaltung",
+                },
+                {
+                  src: "/gallery/rrr_16.jpg",
+                  alt: "Auftritt bei Veranstaltung",
+                },
                 {
                   src: "/gallery/rrr_15.jpg",
                   alt: "Auftritt bei Veranstaltung",
