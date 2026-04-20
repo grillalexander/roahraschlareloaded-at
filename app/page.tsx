@@ -446,12 +446,7 @@ export default function RoahRaschlaReloaded() {
                   </p>
                   <div className="grid md:grid-cols-3 gap-8 mt-12">
                     <div className="text-center">
-                      <div
-                        style={{
-                          backgroundColor: "#82110 !important",
-                        }}
-                        className="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto mb-4"
-                      >
+                      <div className="w-16 h-16 bg-[#821110] rounded-full flex items-center justify-center mx-auto mb-4">
                         <i className="fas fa-music text-white text-2xl"></i>
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
@@ -463,12 +458,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                     </div>
                     <div className="text-center">
-                      <div
-                        style={{
-                          backgroundColor: "#FFDE00 !important",
-                        }}
-                        className="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto mb-4"
-                      >
+                      <div className="w-16 h-16 bg-[#FFDE00] rounded-full flex items-center justify-center mx-auto mb-4">
                         <i className="fas fa-users text-white text-2xl"></i>
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
@@ -480,12 +470,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                     </div>
                     <div className="text-center">
-                      <div
-                        style={{
-                          backgroundColor: "#2D245F !important",
-                        }}
-                        className="w-16 h-16 bg-red-800 rounded-full flex items-center justify-center mx-auto mb-4"
-                      >
+                      <div className="w-16 h-16 bg-[#2D245F] rounded-full flex items-center justify-center mx-auto mb-4">
                         <i className="fas fa-heart text-white text-2xl"></i>
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
@@ -1002,12 +987,7 @@ export default function RoahRaschlaReloaded() {
             <div className="max-w-2xl mx-auto">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div
-                    style={{
-                      backgroundColor: "#821110 !important",
-                    }}
-                    className="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-white"
-                  >
+                  <div className="w-12 h-12 bg-[#821110] rounded-full flex items-center justify-center text-white">
                     <i className="fas fa-map-marker-alt"></i>
                   </div>
                   <div>
@@ -1023,12 +1003,7 @@ export default function RoahRaschlaReloaded() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div
-                    style={{
-                      backgroundColor: "#FFDE00 !important",
-                    }}
-                    className="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-white"
-                  >
+                  <div className="w-12 h-12 bg-[#FFDE00] rounded-full flex items-center justify-center text-white">
                     <i className="fas fa-phone"></i>
                   </div>
                   <div>
@@ -1038,12 +1013,7 @@ export default function RoahRaschlaReloaded() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div
-                    style={{
-                      backgroundColor: "#2D245F !important",
-                    }}
-                    className="w-12 h-12 bg-red-800 rounded-full flex items-center justify-center text-white"
-                  >
+                  <div className="w-12 h-12 bg-[#2D245F] rounded-full flex items-center justify-center text-white">
                     <i className="fas fa-envelope"></i>
                   </div>
                   <div>

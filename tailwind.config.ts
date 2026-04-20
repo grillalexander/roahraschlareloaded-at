@@ -47,10 +47,10 @@ const config: Config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         yellow: {
-          "800": "#FFDE00 !important",
+          "800": "#FFDE00",
         },
         blue: {
-          "800": "#2D245F !important",
+          "800": "#2D245F",
         },
         chart: {
           "1": "hsl(var(--chart-1))",
