@@ -686,6 +686,38 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
+                        src="/event_stotzing.jpg"
+                        alt="Sportlerfest UFC Stotzing"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Sportlerfest UFC Stotzing
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Feiern statt Trainingsalltag: Beim Sportlerfest der UFC
+                        Stotzing wird der Sportplatz zur Feierlocation – mit
+                        Kulinarik, guter Laune und Musik für alle Generationen.
+                        Wir sind am 30. August 2026 von 11:00 bis 13:00 Uhr mit
+                        dabei und freuen uns auf Zeltfest-Stimmung beim Frühschoppen.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span>
+                          <i className="fas fa-calendar mr-2"></i>
+                          30. August 2026, 11:00 - 13:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
                         src="/event_moerbisch.jpg"
                         alt="Kirtag in Mörbisch"
                         className="w-full h-48 object-cover rounded-xl"
@@ -757,22 +789,24 @@ export default function RoahRaschlaReloaded() {
                 <div className="bg-white rounded-2xl p-6 shadow-lg md:col-span-2">
                   <div className="flex items-start justify-between mb-3">
                     <h4 className="font-glitch-sm text-lg text-gray-900 tracking-wide">
-                      GANS BURGENLAND GENUSSMARKT
+                      ASKÖ KLINGENBACH – FASCHINGSFEST
                     </h4>
                   </div>
                   <p className="text-gray-600 mb-4">
-                    In der Ruster Altstadt fand der Gans Burgenland Genussmarkt
-                    statt. Wir hatten die Ehre, bei diesem Event zu spielen und
-                    die Besucher mit unserer Musik zu unterhalten.
+                    Bunt, laut und voller guter Laune: Beim Faschingsfest des
+                    ASKÖ Klingenbach in der Jubiläumshalle sorgten wir beim
+                    Frühschoppen für Partystimmung. Dazu gab es Speis & Trank
+                    sowie ein abwechslungsreiches Programm – inklusive
+                    Kinderdisco für die kleinen Faschingsnarren.
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
                       <i className="fas fa-calendar mr-2"></i>
-                      Sonntag, 04. Oktober 2025, 16:00
+                      Sonntag, 15. Februar 2026
                     </span>
                   </div>
                   <a
-                    href="https://www.meinbezirk.at/eisenstadt/c-leute/gans-burgenland-genussmarkt-begeisterte-besucher_a7694452"
+                    href="https://www.meinbezirk.at/eisenstadt/c-leute/askoe-klingenbach-begeisterte-mit-buntem-faschingsfest_a8100289"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
@@ -794,7 +828,7 @@ export default function RoahRaschlaReloaded() {
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
                       <i className="fas fa-calendar mr-2"></i>
-                      Samstag, 17. August 2025, 18:00
+                      Samstag, 17. August 2025
                     </span>
                   </div>
                   <a
@@ -821,7 +855,7 @@ export default function RoahRaschlaReloaded() {
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
                       <i className="fas fa-calendar mr-2"></i>
-                      Mittwoch, 4. September 2025, 17:00
+                      Mittwoch, 4. September 2025
                     </span>
                   </div>
                   <a
@@ -848,7 +882,7 @@ export default function RoahRaschlaReloaded() {
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
                       <i className="fas fa-calendar mr-2"></i>
-                      Sonntag, 22. September, 14:00
+                      Sonntag, 22. September
                     </span>
                   </div>
                   <a
