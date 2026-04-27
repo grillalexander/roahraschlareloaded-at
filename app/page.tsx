@@ -1,7 +1,7 @@
 "use client";
 import { Disc3, Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type CSSProperties } from "react";
 import {
   Dialog,
   DialogContent,
@@ -55,6 +55,7 @@ const musicians = [
     instrument: "Schlagzeug",
     image: "/musicians/alex_2.jpg",
     monoImage: "/musicians/alex_2_mono.jpg",
+    imageZoom: 2.2,
     description:
       "Servas beinand! \n\n Alex 2.0, mit 6 Joa hob i zum Schlagzeug spün ang’fangt – und seitdem klopf i auf ois drauf, wos ned bei drei aufm Notenständer is. Während de andern mit Ventil und Zuginstrument glänzn,hab i halt zwoa Stöck und a riesige Trommel – und trotzdem immer des letzte Wort im Stück. Und wenn i amoi ned beim Schlagzeug bin – ka Stress, a Topf, Kübel oder Löffel geht a.",
   },
@@ -73,6 +74,7 @@ const musicians = [
     instrument: "Tenor",
     image: "/musicians/alex_3.jpg",
     monoImage: "/musicians/alex_3_mono.jpg",
+    imageZoom: 1.2,
     description:
       "Griaß eich! Gmasz has i\n\nEigentlich is mei Name Alex owa vo de homma zu vü in der Partie. I hob im 15. Lebensjoa erkannt, dass des Tenorhorn mei Instrument ist. Posaune spü i zwoa erst seit 2 Joa, sie is owa scho a fixer Bestandteil in mein musikalischen Leben. \n\nAußerdem deaf i seit nun 6 Joa Kapellmeister bei mein Musikverein sein. Im Gegensotz zu mein Registerkollegen hob i meine Hoa leider nur am Schädl.",
   },
@@ -82,10 +84,30 @@ const musicians = [
     instrument: "Akkordeon",
     image: "/musicians/michael.jpg",
     monoImage: "/musicians/michael_mono.jpg",
+    imageZoom: 1.68,
+    imageObjectPosition: "50% 72%",
     description:
       "Griass eich!\n\n I bin da Michl aus Magredn! Vor guad 16 Jahren hot bei mir olles damit ongfongen, dass i Flügelhorn/Trompete lerne. Einige Jahre später hob i ongfongen bei unseren Musikverein - wieder a boa Joa später ba die Original Roahraschla als Bläser. Inzwischen bin i ba mehrere Partien und oft a mit verschiedenen Instrumenten anzutreffen. In dem Fall bin i der Mann an den Tasten. Und i hob des Privileg, dass i a beruflich Musik mochn derf und des jeden Tog!",
   },
 ];
+
+type MusicianEntry = (typeof musicians)[number] & {
+  imageObjectPosition?: string;
+};
+
+/** object-position for crop alignment (separate from scale — same img + transform can ignore position in some browsers). */
+function headshotObjectStyle(m: MusicianEntry): CSSProperties | undefined {
+  const hasZoom = m.imageZoom != null && m.imageZoom > 0;
+  const pos = m.imageObjectPosition ?? (hasZoom ? "50% 40%" : undefined);
+  if (!pos) return undefined;
+  return { objectPosition: pos };
+}
+
+function headshotZoom(m: MusicianEntry): number | undefined {
+  const z = m.imageZoom;
+  if (z == null || z <= 0) return undefined;
+  return z;
+}
 
 export default function RoahRaschlaReloaded() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -489,32 +511,81 @@ export default function RoahRaschlaReloaded() {
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {/* Musician Cards */}
-                {musicians.map((musician) => (
-                  <div
-                    key={musician.id}
-                    className="text-center group cursor-pointer"
-                    onClick={() => setSelectedMusician(musician)}
-                  >
-                    <div className="relative mb-6 overflow-hidden rounded-2xl">
-                      {/* Mono Image */}
-                      <img
-                        src={musician.monoImage}
-                        alt={musician.name}
-                        className="w-full h-80 object-cover group-hover:opacity-0 transition-opacity duration-300"
-                        width={400}
-                        height={320}
-                        loading="lazy"
-                      />
-                      {/* Regular Image - shown on hover */}
-                      <img
-                        src={musician.image}
-                        alt={musician.name}
-                        className="absolute inset-0 w-full h-80 object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        width={400}
-                        height={320}
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {musicians.map((musician) => {
+                  const m = musician as MusicianEntry;
+                  const z = headshotZoom(m);
+                  const oStyle = headshotObjectStyle(m);
+                  return (
+                    <div
+                      key={musician.id}
+                      className="text-center group cursor-pointer"
+                      onClick={() => setSelectedMusician(musician)}
+                    >
+                    <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
+                      {z != null ? (
+                        <>
+                          <div className="absolute inset-0">
+                            <div
+                              className="h-full w-full"
+                              style={{
+                                transform: `scale(${z})`,
+                                transformOrigin: "center center",
+                              }}
+                            >
+                              <img
+                                src={musician.monoImage}
+                                alt={musician.name}
+                                className="h-full w-full object-cover group-hover:opacity-0 transition-opacity duration-300"
+                                style={oStyle}
+                                width={400}
+                                height={320}
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                          <div className="absolute inset-0">
+                            <div
+                              className="h-full w-full"
+                              style={{
+                                transform: `scale(${z})`,
+                                transformOrigin: "center center",
+                              }}
+                            >
+                              <img
+                                src={musician.image}
+                                alt={musician.name}
+                                className="h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                                style={oStyle}
+                                width={400}
+                                height={320}
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <img
+                            src={musician.monoImage}
+                            alt={musician.name}
+                            className="h-full w-full object-cover group-hover:opacity-0 transition-opacity duration-300"
+                            style={oStyle}
+                            width={400}
+                            height={320}
+                            loading="lazy"
+                          />
+                          <img
+                            src={musician.image}
+                            alt={musician.name}
+                            className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                            style={oStyle}
+                            width={400}
+                            height={320}
+                            loading="lazy"
+                          />
+                        </>
+                      )}
+                      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
                     <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                       {musician.name}
@@ -523,7 +594,8 @@ export default function RoahRaschlaReloaded() {
                       {musician.instrument}
                     </p>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -1232,37 +1304,68 @@ export default function RoahRaschlaReloaded() {
           onOpenChange={() => setSelectedMusician(null)}
         >
           <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-            {selectedMusician && (
-              <DialogHeader>
-                <DialogTitle className="font-script text-3xl text-red-800 text-center mb-4">
-                  {selectedMusician.name}
-                </DialogTitle>
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <img
-                      src={selectedMusician.image}
-                      alt={selectedMusician.name}
-                      className="w-48 h-48 object-cover rounded-2xl mx-auto mb-4 shadow-lg"
-                      width={192}
-                      height={192}
-                      loading="lazy"
-                    />
-                    <h3 className="font-script text-2xl text-red-800 font-semibold mb-2">
-                      {selectedMusician.instrument}
-                    </h3>
-                    <div className="text-gray-600 mb-4 text-center">
-                      {selectedMusician.description
-                        .split("\n")
-                        .map((line, index) => (
-                          <div key={index} className="mb-2">
-                            {line}
-                          </div>
-                        ))}
+            {selectedMusician &&
+              (() => {
+                const sm = selectedMusician as MusicianEntry;
+                const dZ = headshotZoom(sm);
+                const oSt = headshotObjectStyle(sm);
+                return (
+                  <DialogHeader>
+                    <DialogTitle className="font-script text-3xl text-red-800 text-center mb-4">
+                      {selectedMusician.name}
+                    </DialogTitle>
+                    <div className="space-y-6">
+                      <div className="text-center">
+                        <div className="w-48 h-48 overflow-hidden rounded-2xl mx-auto mb-4 shadow-lg">
+                          {dZ != null ? (
+                            <div className="h-full w-full">
+                              <div
+                                className="h-full w-full"
+                                style={{
+                                  transform: `scale(${dZ})`,
+                                  transformOrigin: "center center",
+                                }}
+                              >
+                                <img
+                                  src={selectedMusician.image}
+                                  alt={selectedMusician.name}
+                                  className="h-full w-full object-cover"
+                                  style={oSt}
+                                  width={192}
+                                  height={192}
+                                  loading="lazy"
+                                />
+                              </div>
+                            </div>
+                          ) : (
+                            <img
+                              src={selectedMusician.image}
+                              alt={selectedMusician.name}
+                              className="h-full w-full object-cover"
+                              style={oSt}
+                              width={192}
+                              height={192}
+                              loading="lazy"
+                            />
+                          )}
+                        </div>
+                        <h3 className="font-script text-2xl text-red-800 font-semibold mb-2">
+                          {selectedMusician.instrument}
+                        </h3>
+                        <div className="text-gray-600 mb-4 text-center">
+                          {selectedMusician.description
+                            .split("\n")
+                            .map((line, index) => (
+                              <div key={index} className="mb-2">
+                                {line}
+                              </div>
+                            ))}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </DialogHeader>
-            )}
+                  </DialogHeader>
+                );
+              })()}
           </DialogContent>
         </Dialog>
 
