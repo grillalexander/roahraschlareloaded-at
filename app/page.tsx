@@ -990,6 +990,14 @@ export default function RoahRaschlaReloaded() {
               {/* Regular Images */}
               {[
                 {
+                  src: "/gallery/rrr_19.jpg",
+                  alt: "Auftritt bei Veranstaltung",
+                },
+                {
+                  src: "/gallery/rrr_18.jpg",
+                  alt: "Auftritt bei Veranstaltung",
+                },
+                {
                   src: "/gallery/rrr_17.jpg",
                   alt: "Auftritt bei Veranstaltung",
                 },
