@@ -756,6 +756,36 @@ export default function RoahRaschlaReloaded() {
                 </div>
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3 flex items-center justify-center rounded-xl h-48 bg-white p-4">
+                      <img
+                        src="/event_sieggraben.jpg"
+                        alt="10-Jahre-SPAR-Jubiläum – Frühschoppen in Sieggraben"
+                        className="max-h-full max-w-full object-contain"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        10 Jahre SPAR Taschner
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Zum zehnjährigen Bestehen des SPAR-Marktes in Sieggraben
+                        gibt es einen Frühschoppen mit Musik und guter Laune.Im Anschluss wartet eine große Tombola auf die
+                        Gäste. <br />Wir freuen uns auf euch!
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span>
+                          <i className="fas fa-calendar mr-2"></i>
+                          2. August 2026, 11:30 – 15:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
                         src="/event_stotzing.jpg"
