@@ -163,7 +163,7 @@ body {
 }
 
 .animate-slide-out-right {
-  animation: slideOutRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: slideOutRight 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-gentle-breathe {

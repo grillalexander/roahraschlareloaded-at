@@ -223,24 +223,30 @@ export default function RoahRaschlaReloaded() {
       return () => document.removeEventListener("keydown", handleEscKey);
     }
 
+    let parallaxReady = false;
     let ticking = false;
     const updateParallax = () => {
+      if (!parallaxReady) return;
       hero.style.transform = `translate3d(0, ${window.scrollY * 0.5}px, 0)`;
       ticking = false;
     };
     const handleScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(updateParallax);
-      }
+      if (!parallaxReady || ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateParallax);
     };
 
+    const enableParallax = window.setTimeout(() => {
+      parallaxReady = true;
+      updateParallax();
+    }, 1500);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
-    updateParallax();
 
     return () => {
       document.removeEventListener("keydown", handleEscKey);
       window.removeEventListener("scroll", handleScroll);
+      window.clearTimeout(enableParallax);
     };
   }, []);
 
