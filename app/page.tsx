@@ -1,7 +1,29 @@
 "use client";
-import { Disc3, Facebook, Instagram } from "lucide-react";
+import {
+  ArrowRight,
+  Calendar,
+  Disc3,
+  ExternalLink,
+  Facebook,
+  Heart,
+  Instagram,
+  Mail,
+  MapPin,
+  Menu,
+  Music,
+  Phone,
+  Users,
+  X,
+} from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect, type CSSProperties } from "react";
+import { useState, useEffect, useRef, type CSSProperties } from "react";
+import MusicianPhoto from "@/components/musician-photo";
+import {
+  EVENT_SIZES,
+  GALLERY_SIZES,
+  HERO,
+  responsiveSrc,
+} from "@/lib/images";
 import {
   Dialog,
   DialogContent,
@@ -15,8 +37,8 @@ const musicians = [
     id: 1,
     name: "DOMINIK",
     instrument: "1. Flügelhorn",
-    image: "/musicians/dominik.jpg",
-    monoImage: "/musicians/dominik_mono.jpg",
+    image: "/musicians/dominik.webp",
+    monoImage: "/musicians/dominik_mono.webp",
     description:
       "Haweditutn \n\nSeit 2005 is is Flügelhorn mei treuer Begleiter – und heit nimma aus mein Lebm wegzudenken und die Musi is für mi weit mehr als ein Hobby: Leidenschaft, Ausdruck und pure Lebensfreude. Als Drahtzieher unserer Band bring i ned nur Töne zum Klingen, sondern a Menschen zsaum.",
   },
@@ -24,8 +46,8 @@ const musicians = [
     id: 2,
     name: "ALEX",
     instrument: "2. Flügelhorn",
-    image: "/musicians/alex.jpg",
-    monoImage: "/musicians/alex_mono.jpg",
+    image: "/musicians/alex.webp",
+    monoImage: "/musicians/alex_mono.webp",
     description:
       "Habe d'Ehre!\n\nWann i mi vorstellen deaf: Pock Alex mein Name. Seit über 10 Joah deaf i a Roahraschla sein und am Flügelhorn geigen. Seit ma uns reloaded hom, moderier i a unsere Auftritte, wos jeds Moi a murdstrum Gaudi fia mi is! A wann i hiaz scho Band-Opa bin, hoit mi die Musi ollaweil jung!",
   },
@@ -33,8 +55,8 @@ const musicians = [
     id: 3,
     name: "PHILIPP",
     instrument: "Trompete",
-    image: "/musicians/philipp.jpg",
-    monoImage: "/musicians/philipp_mono.jpg",
+    image: "/musicians/philipp.webp",
+    monoImage: "/musicians/philipp_mono.webp",
     description:
       "Griaß eich\n\nMit 6 Jahren hab ich meine ersten Töne auf der Trompete gespielt – und seitdem lässt mich das Instrument nicht mehr los. Zwar darf das Flügelhorn auch mal mitspielen, aber ganz ehrlich: Die Trompete ist und bleibt mei Liebling!",
   },
@@ -42,8 +64,8 @@ const musicians = [
     id: 4,
     name: "DAVID",
     instrument: "Trompete",
-    image: "/musicians/david.jpg",
-    monoImage: "/musicians/david_mono.jpg",
+    image: "/musicians/david.webp",
+    monoImage: "/musicians/david_mono.webp",
     imageObjectPosition: "50% 28%",
     description:
       "Hawe d'Ehre!\n\nPrior mein Name, David, um genau zu sein.\n\nIn Klingenbach aus ana Familie des hohen Blechs herausgeboren wor fia mi scho ollwei kloa, dass ma nix onderes übrig bleibn wird. Seit 2015 bin i hiaz am Werk und seit 2022 auch auf der JHP damit unterwegs. Neben der Blasmusik bin i no in vü onderem von da Kirchenmusik bis zum Jazz unterwegs. Außerdem deaf i seit 2 Joahn ba uns in Baumgarten in Kapellmeister-Stv. spün, wos mi zum 4. Kapellmeister in dieser Partie mocht.\n\nAls jüngstes Mitglied dieser wundervollen Besetzung bin i eher flexibel und spring gern amoi für jeden vom hohen Blech ein und bin somit quasi ein inkarnierter Wurlitzer. Ansonsten is es guat möglich, dass ihr mi amal irgendwo auf da Orgelbank treffts, wo sie mittlerweile mei zweites musikalisches Habitat befindet.\n\nI gfrei mi sehr, in Zukunft die Roah-Raschla musikalisch bereichern zu dürfen und gfrei mi auf eich!",
@@ -53,8 +75,8 @@ const musicians = [
     id: 5,
     name: "FABIAN",
     instrument: "Bariton",
-    image: "/musicians/fabian.jpg",
-    monoImage: "/musicians/fabian_mono.jpg",
+    image: "/musicians/fabian.webp",
+    monoImage: "/musicians/fabian_mono.webp",
     description:
       "Servus, griass eich und hallo!\n\nI bin da Fabian alias da Fabi und spü seit meim 7 Lebensjoa is Tenorhorn. De Posaun is zwoa erst 13 Joa späta in mei Lebn kumma, owa i spü beide Instrumente gleich gern. Ned nur i hab an Schnauza in dera Partie und außerdem bin i a ana vo zwa de aussn Niederösterreich kemman!",
   },
@@ -62,8 +84,8 @@ const musicians = [
     id: 6,
     name: "ALEX",
     instrument: "Tenor",
-    image: "/musicians/alex_3.jpg",
-    monoImage: "/musicians/alex_3_mono.jpg",
+    image: "/musicians/alex_3.webp",
+    monoImage: "/musicians/alex_3_mono.webp",
     imageZoom: 1.2,
     description:
       "Griaß eich! Gmasz has i\n\nEigentlich is mei Name Alex owa vo de homma zu vü in der Partie. I hob im 15. Lebensjoa erkannt, dass des Tenorhorn mei Instrument ist. Posaune spü i zwoa erst seit 2 Joa, sie is owa scho a fixer Bestandteil in mein musikalischen Leben. \n\nAußerdem deaf i seit nun 6 Joa Kapellmeister bei mein Musikverein sein. Im Gegensotz zu mein Registerkollegen hob i meine Hoa leider nur am Schädl.",
@@ -72,8 +94,8 @@ const musicians = [
     id: 7,
     name: "MORITZ",
     instrument: "Tuba",
-    image: "/musicians/moritz.jpg",
-    monoImage: "/musicians/moritz_mono.jpg",
+    image: "/musicians/moritz.webp",
+    monoImage: "/musicians/moritz_mono.webp",
     description:
       'Griaß eich! Ih bin da Moritz!\n\nIs erste moi ah Tuba in da Hand gehalten hob ih ois "Spätberufener" mit 17 Joah und seitdem loss ih sie fost nimmer aus.\n\nMittlerweile verstehn si mei Tuba und ih scho so guad, dass ma vor an Joah gsogt hom, wir fongan gemeinsam an da JHP zu studieren an.\n\nFois wer gern im Sommer am Ruster Güterweg spazieren geht, konns leicht sein, dass er mi beim Outdoor-proben in unserm Heurigen hört.',
   },
@@ -81,8 +103,8 @@ const musicians = [
     id: 8,
     name: "MICHAEL",
     instrument: "Akkordeon",
-    image: "/musicians/michael.jpg",
-    monoImage: "/musicians/michael_mono.jpg",
+    image: "/musicians/michael.webp",
+    monoImage: "/musicians/michael_mono.webp",
     imageZoom: 1.68,
     imageObjectPosition: "50% 72%",
     description:
@@ -92,8 +114,8 @@ const musicians = [
     id: 9,
     name: "ALEX",
     instrument: "Schlagzeug",
-    image: "/musicians/alex_2.jpg",
-    monoImage: "/musicians/alex_2_mono.jpg",
+    image: "/musicians/alex_2.webp",
+    monoImage: "/musicians/alex_2_mono.webp",
     imageZoom: 2.2,
     description:
       "Servas beinand! \n\n Alex 2.0, mit 6 Joa hob i zum Schlagzeug spün ang’fangt – und seitdem klopf i auf ois drauf, wos ned bei drei aufm Notenständer is. Während de andern mit Ventil und Zuginstrument glänzn,hab i halt zwoa Stöck und a riesige Trommel – und trotzdem immer des letzte Wort im Stück. Und wenn i amoi ned beim Schlagzeug bin – ka Stress, a Topf, Kübel oder Löffel geht a.",
@@ -102,12 +124,36 @@ const musicians = [
     id: 10,
     name: "ROSI",
     instrument: "Sängerin",
-    image: "/musicians/rosi.jpeg",
-    monoImage: "/musicians/rosi_mon.jpeg",
+    image: "/musicians/rosi.webp",
+    monoImage: "/musicians/rosi_mon.webp",
     description:
       "Oink, oink – Pfiat di!\n\nI bin die Rosi, unsere Sängerin und offizielle Stimmführerin der RoahraschlaReloaded. Während de andern Ventile drucken oder auf Zuginstrumente pfeifen, trag i die vokale Partie in Magenta – am lautesten beim Polka, am überzeugendsten beim Grunzen. Griffe brauch i koane, dafür a Stimme, die ma hört, sobald's auf da Bühne losgeht."
   },
 ];
+
+const galleryImages = [
+  { src: "/gallery/rrr_19.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_18.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_17.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_16.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_15.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_14.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_13.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_12.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_11.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_10.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_9.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_8.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_7.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_6.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_2.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_1.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_3.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_4.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_5.webp", alt: "Auftritt bei Veranstaltung" },
+];
+
+const GALLERY_INITIAL_COUNT = 8;
 
 type MusicianEntry = (typeof musicians)[number] & {
   imageObjectPosition?: string;
@@ -131,10 +177,13 @@ export default function RoahRaschlaReloaded() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState("");
-  const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef<HTMLImageElement>(null);
   const [selectedMusician, setSelectedMusician] = useState<
     (typeof musicians)[0] | null
   >(null);
+  const [visibleGalleryCount, setVisibleGalleryCount] = useState(
+    GALLERY_INITIAL_COUNT,
+  );
 
   const openModal = (imageSrc: string) => {
     setModalImage(imageSrc);
@@ -166,10 +215,27 @@ export default function RoahRaschlaReloaded() {
       }
     };
 
-    const handleScroll = () => setScrollY(window.scrollY);
-
     document.addEventListener("keydown", handleEscKey);
-    window.addEventListener("scroll", handleScroll);
+
+    const hero = heroRef.current;
+    if (!hero) {
+      return () => document.removeEventListener("keydown", handleEscKey);
+    }
+
+    let ticking = false;
+    const updateParallax = () => {
+      hero.style.transform = `translate3d(0, ${window.scrollY * 0.5}px, 0)`;
+      ticking = false;
+    };
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateParallax);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    updateParallax();
 
     return () => {
       document.removeEventListener("keydown", handleEscKey);
@@ -186,13 +252,14 @@ export default function RoahRaschlaReloaded() {
             <div className="flex justify-between items-center h-16">
               <div className="flex-shrink-0 flex items-center">
                 <img
-                  src="/logo-full.jpg"
+                  src="/logo-full.webp"
                   alt="RoahRaschlaReloadedLogo"
                   className="h-12 w-auto"
                   width={200}
                   height={48}
                   loading="eager"
                   fetchPriority="high"
+                  decoding="async"
                 />
               </div>
               <div className="hidden md:block">
@@ -241,7 +308,7 @@ export default function RoahRaschlaReloaded() {
                   </div>
                 </nav>
               </div>
-              <div className="flex space-x-4">
+              <div className="hidden md:flex space-x-4">
                 <a
                   href="https://www.facebook.com/profile.php?id=61578069538211"
                   target="_blank"
@@ -294,7 +361,7 @@ export default function RoahRaschlaReloaded() {
                   aria-expanded={mobileMenuOpen}
                   aria-controls="mobile-menu"
                 >
-                  <i className="fas fa-bars text-xl" aria-hidden="true"></i>
+                  <Menu className="h-5 w-5" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -349,7 +416,7 @@ export default function RoahRaschlaReloaded() {
                 </a>
 
                 {/* Social Media Icons for Mobile */}
-                <div className="flex justify-end space-x-4 pt-4 border-t border-gray-200 mt-4">
+                <div className="flex justify-center space-x-4 pt-4 border-t border-gray-200 mt-4">
                   <a
                     href="https://www.facebook.com/profile.php?id=61578069538211"
                     target="_blank"
@@ -403,23 +470,21 @@ export default function RoahRaschlaReloaded() {
           id="home"
           className="relative min-h-screen flex flex-col justify-between overflow-hidden"
         >
-          {/* Preload hero image for LCP optimization */}
           <img
-            src="/all.jpg"
+            ref={heroRef}
+            src={HERO.src}
+            srcSet={HERO.srcSet}
+            sizes={HERO.sizes}
             alt=""
-            className="hidden"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ willChange: "transform" }}
             fetchPriority="high"
             loading="eager"
+            decoding="async"
+            width={1920}
+            height={1280}
             aria-hidden="true"
           />
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url('/all.jpg')`,
-              transform: `translateY(${scrollY * 0.5}px)`,
-              willChange: "transform",
-            }}
-          ></div>
           <div className="absolute inset-0 bg-black/40"></div>
 
           {/* Top spacer */}
@@ -440,18 +505,16 @@ export default function RoahRaschlaReloaded() {
           </div>
 
           {/* Button at bottom */}
-          <div className="relative z-10 pb-8 md:pb-12 lg:pb-16">
-            <div className="text-center">
-              <a
-                href="#ueber-uns"
-                onClick={(e) => scrollToSection("ueber-uns", e)}
-                className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 text-base tracking-wide"
-                aria-label="Mehr über RoahRaschlaReloaded erfahren"
-              >
-                Mehr erfahren
-                <i className="fas fa-arrow-right ml-2" aria-hidden="true"></i>
-              </a>
-            </div>
+          <div className="relative z-10 pb-8 md:pb-12 lg:pb-16 text-center">
+            <a
+              href="#ueber-uns"
+              onClick={(e) => scrollToSection("ueber-uns", e)}
+              className="btn-glass-liquid"
+              aria-label="Mehr über RoahRaschlaReloaded erfahren"
+            >
+              Mehr erfahren
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
           </div>
         </section>
 
@@ -488,7 +551,7 @@ export default function RoahRaschlaReloaded() {
                   <div className="grid md:grid-cols-3 gap-8 mt-12">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-[#821110] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i className="fas fa-music text-white text-2xl"></i>
+                        <Music className="h-6 w-6 text-white" aria-hidden="true" />
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                         TRADITION
@@ -500,7 +563,7 @@ export default function RoahRaschlaReloaded() {
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-[#FFDE00] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i className="fas fa-users text-white text-2xl"></i>
+                        <Users className="h-6 w-6 text-white" aria-hidden="true" />
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                         GEMEINSCHAFT
@@ -512,7 +575,7 @@ export default function RoahRaschlaReloaded() {
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-[#2D245F] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i className="fas fa-heart text-white text-2xl"></i>
+                        <Heart className="h-6 w-6 text-white" aria-hidden="true" />
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                         LEIDENSCHAFT
@@ -547,69 +610,13 @@ export default function RoahRaschlaReloaded() {
                       onClick={() => setSelectedMusician(musician)}
                     >
                     <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
-                      {z != null ? (
-                        <>
-                          <div className="absolute inset-0">
-                            <div
-                              className="h-full w-full"
-                              style={{
-                                transform: `scale(${z})`,
-                                transformOrigin: "center center",
-                              }}
-                            >
-                              <img
-                                src={musician.monoImage}
-                                alt={musician.name}
-                                className="h-full w-full object-cover group-hover:opacity-0 transition-opacity duration-300"
-                                style={oStyle}
-                                width={400}
-                                height={320}
-                                loading="lazy"
-                              />
-                            </div>
-                          </div>
-                          <div className="absolute inset-0">
-                            <div
-                              className="h-full w-full"
-                              style={{
-                                transform: `scale(${z})`,
-                                transformOrigin: "center center",
-                              }}
-                            >
-                              <img
-                                src={musician.image}
-                                alt={musician.name}
-                                className="h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                                style={oStyle}
-                                width={400}
-                                height={320}
-                                loading="lazy"
-                              />
-                            </div>
-                          </div>
-                        </>
-                      ) : (
-                        <>
-                          <img
-                            src={musician.monoImage}
-                            alt={musician.name}
-                            className="h-full w-full object-cover group-hover:opacity-0 transition-opacity duration-300"
-                            style={oStyle}
-                            width={400}
-                            height={320}
-                            loading="lazy"
-                          />
-                          <img
-                            src={musician.image}
-                            alt={musician.name}
-                            className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                            style={oStyle}
-                            width={400}
-                            height={320}
-                            loading="lazy"
-                          />
-                        </>
-                      )}
+                      <MusicianPhoto
+                        monoImage={musician.monoImage}
+                        colorImage={musician.image}
+                        alt={musician.name}
+                        objectStyle={oStyle}
+                        zoom={z}
+                      />
                       <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     </div>
                     <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
@@ -646,7 +653,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
-                        src="/event_klingenbach.jpg"
+                        {...responsiveSrc("/event_klingenbach.webp")}
+                        sizes={EVENT_SIZES}
                         alt="Faschingsfest – ASKÖ Fußballverein Klingenbach"
                         className="w-full h-48 object-cover rounded-xl"
                         width={400}
@@ -666,7 +674,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           15. Februar 2026, 11:30 - 14:00 Uhr
                         </span>
                       </div>
@@ -678,7 +686,10 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
-                        src="/Weinroas-Illmitz_090©Burgenland Tourismus_Hafenscher.jpg"
+                        {...responsiveSrc(
+                          "/Weinroas-Illmitz_090©Burgenland Tourismus_Hafenscher.webp",
+                        )}
+                        sizes={EVENT_SIZES}
                         alt="RoahRaschlaReloaded bei der Woodstock Weinroas in Apetlon"
                         className="w-full h-48 object-cover rounded-xl"
                         width={400}
@@ -702,14 +713,8 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2" aria-hidden></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           26. April 2026, 16:30 – 18:30 Uhr
-                        </span>
-                        <span>
-                          <i
-                            className="fas fa-map-marker-alt mr-2"
-                            aria-hidden
-                          ></i>
                         </span>
                       </div>
                     </div>
@@ -719,7 +724,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
-                        src="/event_steinbrunn.jpeg"
+                        {...responsiveSrc("/event_steinbrunn.webp")}
+                        sizes={EVENT_SIZES}
                         alt="Feuerwehrfest in Steinbrunn"
                         className="w-full h-48 object-cover rounded-xl"
                         width={400}
@@ -741,7 +747,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           7. Juni 2026, 11:00 - 14:00 Uhr
                         </span>
                       </div>
@@ -752,7 +758,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
-                        src="/event_stmargarethen.jpg"
+                        {...responsiveSrc("/event_stmargarethen.webp")}
+                        sizes={EVENT_SIZES}
                         alt="Johannikirtag in St. Margarethen"
                         className="w-full h-48 object-cover rounded-xl"
                         width={400}
@@ -772,7 +779,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           24. Juni 2026, 14:00 - 19:00 Uhr
                         </span>
                       </div>
@@ -783,7 +790,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3 flex items-center justify-center rounded-xl h-48 bg-white p-4">
                       <img
-                        src="/event_sieggraben.jpg"
+                        {...responsiveSrc("/event_sieggraben.webp")}
+                        sizes={EVENT_SIZES}
                         alt="10-Jahre-SPAR-Jubiläum – Frühschoppen in Sieggraben"
                         className="max-h-full max-w-full object-contain"
                         width={400}
@@ -802,7 +810,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           2. August 2026, 11:30 – 15:00 Uhr
                         </span>
                       </div>
@@ -813,7 +821,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
-                        src="/event_stotzing.jpg"
+                        {...responsiveSrc("/event_stotzing.webp")}
+                        sizes={EVENT_SIZES}
                         alt="Sportlerfest UFC Stotzing"
                         className="w-full h-48 object-cover rounded-xl"
                         width={400}
@@ -834,7 +843,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           30. August 2026, 11:00 - 13:00 Uhr
                         </span>
                       </div>
@@ -845,7 +854,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3">
                       <img
-                        src="/event_moerbisch.jpg"
+                        {...responsiveSrc("/event_moerbisch.webp")}
+                        sizes={EVENT_SIZES}
                         alt="Kirtag in Mörbisch"
                         className="w-full h-48 object-cover rounded-xl"
                         width={400}
@@ -865,7 +875,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           13. September 2026, 16:00 - 19:00 Uhr
                         </span>
                       </div>
@@ -877,7 +887,8 @@ export default function RoahRaschlaReloaded() {
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3 flex items-center justify-center bg-black rounded-xl h-48">
                       <img
-                        src="/event_hinzkunz.jpg"
+                        {...responsiveSrc("/event_hinzkunz.webp")}
+                        sizes={EVENT_SIZES}
                         alt="Musikstammtisch"
                         className="max-w-full max-h-full object-contain"
                         width={400}
@@ -897,7 +908,7 @@ export default function RoahRaschlaReloaded() {
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span>
-                          <i className="fas fa-calendar mr-2"></i>
+                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                           10. November 2026, 20:00 - 24:00
                         </span>
                       </div>
@@ -928,7 +939,7 @@ export default function RoahRaschlaReloaded() {
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
-                      <i className="fas fa-calendar mr-2"></i>
+                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                       Sonntag, 15. Februar 2026
                     </span>
                   </div>
@@ -939,7 +950,7 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     ZUM BERICHT{" "}
-                    <i className="fas fa-external-link-alt ml-1"></i>
+                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
                   </a>
                 </div>
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -954,7 +965,7 @@ export default function RoahRaschlaReloaded() {
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
-                      <i className="fas fa-calendar mr-2"></i>
+                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                       Samstag, 17. August 2025
                     </span>
                   </div>
@@ -964,7 +975,8 @@ export default function RoahRaschlaReloaded() {
                     rel="noopener noreferrer"
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
-                    MEHR INFOS <i className="fas fa-external-link-alt ml-1"></i>
+                    MEHR INFOS{" "}
+                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
                   </a>
                 </div>
 
@@ -981,7 +993,7 @@ export default function RoahRaschlaReloaded() {
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
-                      <i className="fas fa-calendar mr-2"></i>
+                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                       Mittwoch, 4. September 2025
                     </span>
                   </div>
@@ -992,7 +1004,7 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     ZUR SENDUNG{" "}
-                    <i className="fas fa-external-link-alt ml-1"></i>
+                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
                   </a>
                 </div>
 
@@ -1008,7 +1020,7 @@ export default function RoahRaschlaReloaded() {
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
                     <span>
-                      <i className="fas fa-calendar mr-2"></i>
+                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
                       Sonntag, 22. September
                     </span>
                   </div>
@@ -1019,7 +1031,7 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     ZUM BERICHT{" "}
-                    <i className="fas fa-external-link-alt ml-1"></i>
+                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -1042,104 +1054,46 @@ export default function RoahRaschlaReloaded() {
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {/* Regular Images */}
-              {[
-                {
-                  src: "/gallery/rrr_19.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_18.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_17.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_16.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_15.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_14.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_13.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_12.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_11.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_10.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_9.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_8.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_7.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_6.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_2.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_1.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-
-                {
-                  src: "/gallery/rrr_3.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_4.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-                {
-                  src: "/gallery/rrr_5.jpg",
-                  alt: "Auftritt bei Veranstaltung",
-                },
-              ].map((image, index) => (
+              {galleryImages.slice(0, visibleGalleryCount).map((image) => {
+                const src = responsiveSrc(image.src);
+                return (
                 <div
-                  key={index}
+                  key={image.src}
                   className="cursor-pointer hover:scale-105 transition-transform duration-300"
                   onClick={() => openModal(image.src)}
                 >
                   <div className="aspect-[3/4] w-full">
                     <img
-                      src={image.src}
+                      src={src.src}
+                      srcSet={src.srcSet}
+                      sizes={GALLERY_SIZES}
                       alt={image.alt}
                       className="w-full h-full object-cover rounded-2xl shadow-lg"
                       width={400}
                       height={533}
                       loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
+            {visibleGalleryCount < galleryImages.length && (
+              <div className="text-center mt-12">
+                <button
+                  type="button"
+                  onClick={() =>
+                    setVisibleGalleryCount((count) =>
+                      Math.min(count + GALLERY_INITIAL_COUNT, galleryImages.length),
+                    )
+                  }
+                  className="btn-glass-liquid-light"
+                >
+                  Mehr Bilder laden
+                </button>
+              </div>
+            )}
           </div>
         </section>
 
@@ -1157,7 +1111,7 @@ export default function RoahRaschlaReloaded() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-[#821110] rounded-full flex items-center justify-center text-white">
-                    <i className="fas fa-map-marker-alt"></i>
+                    <MapPin className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="text-gray-900 mb-1">Adresse</h4>
@@ -1173,7 +1127,7 @@ export default function RoahRaschlaReloaded() {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-[#FFDE00] rounded-full flex items-center justify-center text-white">
-                    <i className="fas fa-phone"></i>
+                    <Phone className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="text-gray-900 mb-1">Telefon</h4>
@@ -1183,7 +1137,7 @@ export default function RoahRaschlaReloaded() {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-[#2D245F] rounded-full flex items-center justify-center text-white">
-                    <i className="fas fa-envelope"></i>
+                    <Mail className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
                     <h4 className="text-gray-900 mb-1">E-Mail</h4>
@@ -1204,7 +1158,7 @@ export default function RoahRaschlaReloaded() {
               <div>
                 <div className="flex items-center mb-4">
                   <img
-                    src="/logo-full.jpg"
+                    src="/logo-full.webp"
                     alt="RoahRaschlaReloaded Logo"
                     className="h-16 w-auto"
                     width={200}
@@ -1216,7 +1170,7 @@ export default function RoahRaschlaReloaded() {
                   Neu belebte böhmische Blasmusik mit frischem Schwung und viel
                   Leidenschaft – altbewährt, aber keineswegs von gestern.
                 </p>
-                <div className="flex space-x-4">
+                <div className="hidden md:flex space-x-4">
                   <a
                     href="https://www.facebook.com/profile.php?id=61578069538211"
                     target="_blank"
@@ -1451,7 +1405,7 @@ export default function RoahRaschlaReloaded() {
                 className="absolute top-6 right-6 text-white text-3xl hover:text-gray-300"
                 aria-label="Bild schließen"
               >
-                <i className="fas fa-times" aria-hidden="true"></i>
+                <X className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
           </div>

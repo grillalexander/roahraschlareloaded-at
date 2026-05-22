@@ -2,10 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true, // Required for static export, but we'll use proper sizing
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
   },
-  trailingSlash: true, // Add trailing slashes for cleaner static URLs
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+  trailingSlash: true,
   output: "export",
   eslint: {
     ignoreDuringBuilds: true,

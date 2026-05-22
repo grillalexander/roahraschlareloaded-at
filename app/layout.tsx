@@ -22,9 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <head>
-        {/* Preload critical fonts */}
         <link
           rel="preload"
           href="/fonts/dancing-script-bold.woff2"
@@ -34,15 +33,20 @@ export default function RootLayout({
         />
         <link
           rel="preload"
-          href="/fonts/dancing-script-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
+          href="/all-960.webp"
+          as="image"
+          fetchPriority="high"
+          type="image/webp"
+          media="(max-width: 960px)"
         />
-        {/* Preload hero image for LCP */}
-        <link rel="preload" href="/all.jpg" as="image" fetchPriority="high" />
-        {/* Preload logo */}
-        <link rel="preload" href="/logo-full.jpg" as="image" />
+        <link
+          rel="preload"
+          href="/all.webp"
+          as="image"
+          fetchPriority="high"
+          type="image/webp"
+          media="(min-width: 961px)"
+        />
       </head>
       <body>
         <Loader />
