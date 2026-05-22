@@ -38,29 +38,19 @@ const musicians = [
     description:
       "Griaß eich\n\nMit 6 Jahren hab ich meine ersten Töne auf der Trompete gespielt – und seitdem lässt mich das Instrument nicht mehr los. Zwar darf das Flügelhorn auch mal mitspielen, aber ganz ehrlich: Die Trompete ist und bleibt mei Liebling!",
   },
-
   {
     id: 4,
-    name: "MORITZ",
-    instrument: "Tuba",
-    image: "/musicians/moritz.jpg",
-    monoImage: "/musicians/moritz_mono.jpg",
+    name: "DAVID",
+    instrument: "Trompete",
+    image: "/musicians/david.jpg",
+    monoImage: "/musicians/david_mono.jpg",
+    imageObjectPosition: "50% 28%",
     description:
-      'Griaß eich! Ih bin da Moritz!\n\nIs erste moi ah Tuba in da Hand gehalten hob ih ois "Spätberufener" mit 17 Joah und seitdem loss ih sie fost nimmer aus.\n\nMittlerweile verstehn si mei Tuba und ih scho so guad, dass ma vor an Joah gsogt hom, wir fongan gemeinsam an da JHP zu studieren an.\n\nFois wer gern im Sommer am Ruster Güterweg spazieren geht, konns leicht sein, dass er mi beim Outdoor-proben in unserm Heurigen hört.',
+      "Hawe d'Ehre!\n\nPrior mein Name, David, um genau zu sein.\n\nIn Klingenbach aus ana Familie des hohen Blechs herausgeboren wor fia mi scho ollwei kloa, dass ma nix onderes übrig bleibn wird. Seit 2015 bin i hiaz am Werk und seit 2022 auch auf der JHP damit unterwegs. Neben der Blasmusik bin i no in vü onderem von da Kirchenmusik bis zum Jazz unterwegs. Außerdem deaf i seit 2 Joahn ba uns in Baumgarten in Kapellmeister-Stv. spün, wos mi zum 4. Kapellmeister in dieser Partie mocht.\n\nAls jüngstes Mitglied dieser wundervollen Besetzung bin i eher flexibel und spring gern amoi für jeden vom hohen Blech ein und bin somit quasi ein inkarnierter Wurlitzer. Ansonsten is es guat möglich, dass ihr mi amal irgendwo auf da Orgelbank treffts, wo sie mittlerweile mei zweites musikalisches Habitat befindet.\n\nI gfrei mi sehr, in Zukunft die Roah-Raschla musikalisch bereichern zu dürfen und gfrei mi auf eich!",
   },
 
   {
     id: 5,
-    name: "ALEX",
-    instrument: "Schlagzeug",
-    image: "/musicians/alex_2.jpg",
-    monoImage: "/musicians/alex_2_mono.jpg",
-    imageZoom: 2.2,
-    description:
-      "Servas beinand! \n\n Alex 2.0, mit 6 Joa hob i zum Schlagzeug spün ang’fangt – und seitdem klopf i auf ois drauf, wos ned bei drei aufm Notenständer is. Während de andern mit Ventil und Zuginstrument glänzn,hab i halt zwoa Stöck und a riesige Trommel – und trotzdem immer des letzte Wort im Stück. Und wenn i amoi ned beim Schlagzeug bin – ka Stress, a Topf, Kübel oder Löffel geht a.",
-  },
-  {
-    id: 6,
     name: "FABIAN",
     instrument: "Bariton",
     image: "/musicians/fabian.jpg",
@@ -69,7 +59,7 @@ const musicians = [
       "Servus, griass eich und hallo!\n\nI bin da Fabian alias da Fabi und spü seit meim 7 Lebensjoa is Tenorhorn. De Posaun is zwoa erst 13 Joa späta in mei Lebn kumma, owa i spü beide Instrumente gleich gern. Ned nur i hab an Schnauza in dera Partie und außerdem bin i a ana vo zwa de aussn Niederösterreich kemman!",
   },
   {
-    id: 7,
+    id: 6,
     name: "ALEX",
     instrument: "Tenor",
     image: "/musicians/alex_3.jpg",
@@ -77,6 +67,15 @@ const musicians = [
     imageZoom: 1.2,
     description:
       "Griaß eich! Gmasz has i\n\nEigentlich is mei Name Alex owa vo de homma zu vü in der Partie. I hob im 15. Lebensjoa erkannt, dass des Tenorhorn mei Instrument ist. Posaune spü i zwoa erst seit 2 Joa, sie is owa scho a fixer Bestandteil in mein musikalischen Leben. \n\nAußerdem deaf i seit nun 6 Joa Kapellmeister bei mein Musikverein sein. Im Gegensotz zu mein Registerkollegen hob i meine Hoa leider nur am Schädl.",
+  },
+  {
+    id: 7,
+    name: "MORITZ",
+    instrument: "Tuba",
+    image: "/musicians/moritz.jpg",
+    monoImage: "/musicians/moritz_mono.jpg",
+    description:
+      'Griaß eich! Ih bin da Moritz!\n\nIs erste moi ah Tuba in da Hand gehalten hob ih ois "Spätberufener" mit 17 Joah und seitdem loss ih sie fost nimmer aus.\n\nMittlerweile verstehn si mei Tuba und ih scho so guad, dass ma vor an Joah gsogt hom, wir fongan gemeinsam an da JHP zu studieren an.\n\nFois wer gern im Sommer am Ruster Güterweg spazieren geht, konns leicht sein, dass er mi beim Outdoor-proben in unserm Heurigen hört.',
   },
   {
     id: 8,
@@ -88,6 +87,25 @@ const musicians = [
     imageObjectPosition: "50% 72%",
     description:
       "Griass eich!\n\n I bin da Michl aus Magredn! Vor guad 16 Jahren hot bei mir olles damit ongfongen, dass i Flügelhorn/Trompete lerne. Einige Jahre später hob i ongfongen bei unseren Musikverein - wieder a boa Joa später ba die Original Roahraschla als Bläser. Inzwischen bin i ba mehrere Partien und oft a mit verschiedenen Instrumenten anzutreffen. In dem Fall bin i der Mann an den Tasten. Und i hob des Privileg, dass i a beruflich Musik mochn derf und des jeden Tog!",
+  },
+  {
+    id: 9,
+    name: "ALEX",
+    instrument: "Schlagzeug",
+    image: "/musicians/alex_2.jpg",
+    monoImage: "/musicians/alex_2_mono.jpg",
+    imageZoom: 2.2,
+    description:
+      "Servas beinand! \n\n Alex 2.0, mit 6 Joa hob i zum Schlagzeug spün ang’fangt – und seitdem klopf i auf ois drauf, wos ned bei drei aufm Notenständer is. Während de andern mit Ventil und Zuginstrument glänzn,hab i halt zwoa Stöck und a riesige Trommel – und trotzdem immer des letzte Wort im Stück. Und wenn i amoi ned beim Schlagzeug bin – ka Stress, a Topf, Kübel oder Löffel geht a.",
+  },
+  {
+    id: 10,
+    name: "ROSI",
+    instrument: "Sängerin",
+    image: "/musicians/rosi.jpeg",
+    monoImage: "/musicians/rosi_mon.jpeg",
+    description:
+      "Oink, oink – Pfiat di!\n\nI bin die Rosi, unsere Sängerin und offizielle Stimmführerin der RoahraschlaReloaded. Während de andern Ventile drucken oder auf Zuginstrumente pfeifen, trag i die vokale Partie in Magenta – am lautesten beim Polka, am überzeugendsten beim Grunzen. Griffe brauch i koane, dafür a Stimme, die ma hört, sobald's auf da Bühne losgeht."
   },
 ];
 
@@ -454,7 +472,8 @@ export default function RoahRaschlaReloaded() {
                     Wir sind die RoahRaschlaReloaded aus dem Nordburgenland, in
                     der Nähe des Neusiedler Sees – eine böhmische Partie, die
                     die Blasmusik in unserer Region mit Herz und guter Laune am
-                    Leben hält. Unsere acht Musiker, jung bis jung geblieben,
+                    Leben hält. Unsere neun Musiker – plus Rosi –, jung bis
+                    jung geblieben,
                     bringen alles auf die Bühne, was das Blasmusikherz
                     höherschlagen lässt: von traditionellen Märschen bis zu
                     schwungvollen Polkas.
@@ -515,10 +534,16 @@ export default function RoahRaschlaReloaded() {
                   const m = musician as MusicianEntry;
                   const z = headshotZoom(m);
                   const oStyle = headshotObjectStyle(m);
+                  const lastRowGridClass =
+                    musician.id === 9
+                      ? "xl:col-start-2"
+                      : musician.id === 10
+                        ? "xl:col-start-3 lg:col-start-2"
+                        : "";
                   return (
                     <div
                       key={musician.id}
-                      className="text-center group cursor-pointer"
+                      className={`text-center group cursor-pointer ${lastRowGridClass}`}
                       onClick={() => setSelectedMusician(musician)}
                     >
                     <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
