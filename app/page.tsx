@@ -78,7 +78,7 @@ const musicians = [
     image: "/musicians/fabian.webp",
     monoImage: "/musicians/fabian_mono.webp",
     description:
-      "Servus, griass eich und hallo!\n\nI bin da Fabian alias da Fabi und spü seit meim 7 Lebensjoa is Tenorhorn. De Posaun is zwoa erst 13 Joa späta in mei Lebn kumma, owa i spü beide Instrumente gleich gern. Ned nur i hab an Schnauza in dera Partie und außerdem bin i a ana vo zwa de aussn Niederösterreich kemman!",
+      "Servus, griass eich und hallo!\n\nI bin da Fabian alias da Fabi und spü seit meim 7 Lebensjoa is Tenorhorn. De Posaun is zwoa erst 13 Joa späta in mei Lebn kumma, owa i spü beide Instrumente gleich gern. Ned nur i hab an Schnauza in dera Partie!",
   },
   {
     id: 6,
@@ -105,8 +105,8 @@ const musicians = [
     instrument: "Akkordeon",
     image: "/musicians/michael.webp",
     monoImage: "/musicians/michael_mono.webp",
-    imageZoom: 1.68,
-    imageObjectPosition: "50% 72%",
+    imageZoom: 1.45,
+    imageObjectPosition: "50% 65%",
     description:
       "Griass eich!\n\n I bin da Michl aus Magredn! Vor guad 16 Jahren hot bei mir olles damit ongfongen, dass i Flügelhorn/Trompete lerne. Einige Jahre später hob i ongfongen bei unseren Musikverein - wieder a boa Joa später ba die Original Roahraschla als Bläser. Inzwischen bin i ba mehrere Partien und oft a mit verschiedenen Instrumenten anzutreffen. In dem Fall bin i der Mann an den Tasten. Und i hob des Privileg, dass i a beruflich Musik mochn derf und des jeden Tog!",
   },
@@ -132,6 +132,7 @@ const musicians = [
 ];
 
 const galleryImages = [
+  { src: "/gallery/rrr_20.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_19.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_18.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_17.webp", alt: "Auftritt bei Veranstaltung" },
@@ -535,7 +536,7 @@ export default function RoahRaschlaReloaded() {
                     Wir sind die RoahRaschlaReloaded aus dem Nordburgenland, in
                     der Nähe des Neusiedler Sees – eine böhmische Partie, die
                     die Blasmusik in unserer Region mit Herz und guter Laune am
-                    Leben hält. Unsere neun Musiker – plus Rosi –, jung bis
+                    Leben hält. Unsere zehn Musiker, jung bis
                     jung geblieben,
                     bringen alles auf die Bühne, was das Blasmusikherz
                     höherschlagen lässt: von traditionellen Märschen bis zu
@@ -740,7 +741,7 @@ export default function RoahRaschlaReloaded() {
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         Wir spielen beim Feuerwehrfest der Freiwilligen
                         Feuerwehr Steinbrunn am 7. Juni 2026 von 11:00 bis 14:00
-                        Uhr. Das Fest findet im um das Feuerwehrhaus in
+                        Uhr.                         Das Fest findet in und um das Feuerwehrhaus in
                         Steinbrunn.
                         <br />
                         Wir freuen uns auf euch!
