@@ -45,8 +45,7 @@ export default function MusicianPhoto({
     el.dataset.loaded = "1";
   };
 
-  const imgBase =
-    "h-full w-full object-cover transition-opacity duration-300";
+  const imgBase = "h-full w-full object-cover transition-opacity duration-300";
 
   const monoImg = scaled(
     <img

@@ -18,12 +18,7 @@ import {
 import Link from "next/link";
 import { useState, useEffect, useRef, type CSSProperties } from "react";
 import MusicianPhoto from "@/components/musician-photo";
-import {
-  EVENT_SIZES,
-  GALLERY_SIZES,
-  HERO,
-  responsiveSrc,
-} from "@/lib/images";
+import { EVENT_SIZES, GALLERY_SIZES, HERO, responsiveSrc } from "@/lib/images";
 import {
   Dialog,
   DialogContent,
@@ -127,7 +122,7 @@ const musicians = [
     image: "/musicians/rosi.webp",
     monoImage: "/musicians/rosi_mon.webp",
     description:
-      "Oink, oink – Pfiat di!\n\nI bin die Rosi, unsere Sängerin und offizielle Stimmführerin der RoahraschlaReloaded. Während de andern Ventile drucken oder auf Zuginstrumente pfeifen, trag i die vokale Partie in Magenta – am lautesten beim Polka, am überzeugendsten beim Grunzen. Griffe brauch i koane, dafür a Stimme, die ma hört, sobald's auf da Bühne losgeht."
+      "Oink, oink – Pfiat di!\n\nI bin die Rosi, unsere Sängerin und offizielle Stimmführerin der RoahraschlaReloaded. Während de andern Ventile drucken oder auf Zuginstrumente pfeifen, trag i die vokale Partie in Magenta – am lautesten beim Polka, am überzeugendsten beim Grunzen. Griffe brauch i koane, dafür a Stimme, die ma hört, sobald's auf da Bühne losgeht.",
   },
 ];
 
@@ -542,8 +537,7 @@ export default function RoahRaschlaReloaded() {
                     Wir sind die RoahRaschlaReloaded aus dem Nordburgenland, in
                     der Nähe des Neusiedler Sees – eine böhmische Partie, die
                     die Blasmusik in unserer Region mit Herz und guter Laune am
-                    Leben hält. Unsere zehn Musiker, jung bis
-                    jung geblieben,
+                    Leben hält. Unsere zehn Musiker, jung bis jung geblieben,
                     bringen alles auf die Bühne, was das Blasmusikherz
                     höherschlagen lässt: von traditionellen Märschen bis zu
                     schwungvollen Polkas.
@@ -558,7 +552,10 @@ export default function RoahRaschlaReloaded() {
                   <div className="grid md:grid-cols-3 gap-8 mt-12">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-[#821110] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Music className="h-6 w-6 text-white" aria-hidden="true" />
+                        <Music
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                         TRADITION
@@ -570,7 +567,10 @@ export default function RoahRaschlaReloaded() {
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-[#FFDE00] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Users className="h-6 w-6 text-white" aria-hidden="true" />
+                        <Users
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                         GEMEINSCHAFT
@@ -582,7 +582,10 @@ export default function RoahRaschlaReloaded() {
                     </div>
                     <div className="text-center">
                       <div className="w-16 h-16 bg-[#2D245F] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Heart className="h-6 w-6 text-white" aria-hidden="true" />
+                        <Heart
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
                       </div>
                       <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
                         LEIDENSCHAFT
@@ -616,23 +619,23 @@ export default function RoahRaschlaReloaded() {
                       className={`text-center group cursor-pointer ${lastRowGridClass}`}
                       onClick={() => setSelectedMusician(musician)}
                     >
-                    <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
-                      <MusicianPhoto
-                        monoImage={musician.monoImage}
-                        colorImage={musician.image}
-                        alt={musician.name}
-                        objectStyle={oStyle}
-                        zoom={z}
-                      />
-                      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="relative mb-6 h-80 w-full overflow-hidden rounded-2xl">
+                        <MusicianPhoto
+                          monoImage={musician.monoImage}
+                          colorImage={musician.image}
+                          alt={musician.name}
+                          objectStyle={oStyle}
+                          zoom={z}
+                        />
+                        <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      </div>
+                      <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
+                        {musician.name}
+                      </h3>
+                      <p className="font-script text-lg text-red-800 font-semibold">
+                        {musician.instrument}
+                      </p>
                     </div>
-                    <h3 className="font-glitch-sm text-lg text-gray-900 mb-2 tracking-wide">
-                      {musician.name}
-                    </h3>
-                    <p className="font-script text-lg text-red-800 font-semibold">
-                      {musician.instrument}
-                    </p>
-                  </div>
                   );
                 })}
               </div>
@@ -680,8 +683,11 @@ export default function RoahRaschlaReloaded() {
                         sind dabei!
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           15. Februar 2026, 11:30 - 14:00 Uhr
                         </span>
                       </div>
@@ -719,8 +725,11 @@ export default function RoahRaschlaReloaded() {
                         Seewinkel-Flair.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           26. April 2026, 16:30 – 18:30 Uhr
                         </span>
                       </div>
@@ -747,14 +756,17 @@ export default function RoahRaschlaReloaded() {
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         Wir spielen beim Feuerwehrfest der Freiwilligen
                         Feuerwehr Steinbrunn am 7. Juni 2026 von 11:00 bis 14:00
-                        Uhr.                         Das Fest findet in und um das Feuerwehrhaus in
+                        Uhr. Das Fest findet in und um das Feuerwehrhaus in
                         Steinbrunn.
                         <br />
                         Wir freuen uns auf euch!
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           7. Juni 2026, 11:00 - 14:00 Uhr
                         </span>
                       </div>
@@ -785,8 +797,11 @@ export default function RoahRaschlaReloaded() {
                         Musikvereinshaus in der Kirchengasse 33 statt.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           24. Juni 2026, 14:00 - 19:00 Uhr
                         </span>
                       </div>
@@ -812,13 +827,122 @@ export default function RoahRaschlaReloaded() {
                       </h4>
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         Zum zehnjährigen Bestehen des SPAR-Marktes in Sieggraben
-                        gibt es einen Frühschoppen mit Musik und guter Laune.Im Anschluss wartet eine große Tombola auf die
-                        Gäste. <br />Wir freuen uns auf euch!
+                        gibt es einen Frühschoppen mit Musik und guter Laune.Im
+                        Anschluss wartet eine große Tombola auf die Gäste.{" "}
+                        <br />
+                        Wir freuen uns auf euch!
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           2. August 2026, 11:30 – 15:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_fertorakos.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Straßenfest Fertőrákos am Neusiedler See"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Straßenfest Fertőrákos
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Beim Straßenfest in Fertőrákos (Fertörakos/Kroisbach) am
+                        Neusiedler See sind wir mit österreichischer Blasmusik
+                        dabei – im ungarischen Nachbardorf, nur wenige Kilometer
+                        von Sopron entfernt.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          8. August 2026, 19:00 – 21:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3 flex items-center justify-center rounded-xl h-48 bg-white p-4">
+                      <img
+                        {...responsiveSrc("/event_gols.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Golser Volksfest – Blech & Wein"
+                        className="max-h-full max-w-full object-contain"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Golser Volksfest – Blech &amp; Wein
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Beim Golser Volksfest steht am Mittwoch der „Blech &amp;
+                        Wein“-Tag im Zeichen der Blasmusik. Im Bierzelt sind wir
+                        gemeinsam mit Dunajska Kapela und der Kapelle Josef
+                        Menzl mit dabei.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          12. August 2026, 18:00 – 20:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_oldtoms.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Old Tom's Café & Bar in St. Margarethen im Burgenland"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        OLD TOM&apos;S Café &amp; Bar – Bömischer Abend
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Beim Bömischen Abend im Old Tom&apos;s in St.
+                        Margarethen im Burgenland sorgen wir für gute Stimmung,
+                        regionale Schmankerl und Blasmusik am Samstagabend.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          29. August 2026, 19:00 – 22:00 Uhr
                         </span>
                       </div>
                     </div>
@@ -846,11 +970,15 @@ export default function RoahRaschlaReloaded() {
                         Stotzing wird der Sportplatz zur Feierlocation – mit
                         Kulinarik, guter Laune und Musik für alle Generationen.
                         Wir sind am 30. August 2026 von 11:00 bis 13:00 Uhr mit
-                        dabei und freuen uns auf Zeltfest-Stimmung beim Frühschoppen.
+                        dabei und freuen uns auf Zeltfest-Stimmung beim
+                        Frühschoppen.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           30. August 2026, 11:00 - 13:00 Uhr
                         </span>
                       </div>
@@ -881,8 +1009,11 @@ export default function RoahRaschlaReloaded() {
                         Geselligkeit und burgenländischem Flair.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           13. September 2026, 16:00 - 19:00 Uhr
                         </span>
                       </div>
@@ -914,8 +1045,11 @@ export default function RoahRaschlaReloaded() {
                         regelmäßigen musikalischen Veranstaltungen.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
-                        <span>
-                          <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
                           10. November 2026, 20:00 - 24:00
                         </span>
                       </div>
@@ -945,8 +1079,11 @@ export default function RoahRaschlaReloaded() {
                     Kinderdisco für die kleinen Faschingsnarren.
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
-                    <span>
-                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar
+                        className="h-4 w-4 shrink-0"
+                        aria-hidden="true"
+                      />
                       Sonntag, 15. Februar 2026
                     </span>
                   </div>
@@ -957,7 +1094,10 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     ZUM BERICHT{" "}
-                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
+                    <ExternalLink
+                      className="inline h-3 w-3 ml-1"
+                      aria-hidden="true"
+                    />
                   </a>
                 </div>
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
@@ -971,8 +1111,11 @@ export default function RoahRaschlaReloaded() {
                     Familie Jagschitz. Wein, Musik und pannonisches Flair.
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
-                    <span>
-                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar
+                        className="h-4 w-4 shrink-0"
+                        aria-hidden="true"
+                      />
                       Samstag, 17. August 2025
                     </span>
                   </div>
@@ -983,7 +1126,10 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     MEHR INFOS{" "}
-                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
+                    <ExternalLink
+                      className="inline h-3 w-3 ml-1"
+                      aria-hidden="true"
+                    />
                   </a>
                 </div>
 
@@ -999,8 +1145,11 @@ export default function RoahRaschlaReloaded() {
                     Kulturberichterstattung.
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
-                    <span>
-                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar
+                        className="h-4 w-4 shrink-0"
+                        aria-hidden="true"
+                      />
                       Mittwoch, 4. September 2025
                     </span>
                   </div>
@@ -1011,7 +1160,10 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     ZUR SENDUNG{" "}
-                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
+                    <ExternalLink
+                      className="inline h-3 w-3 ml-1"
+                      aria-hidden="true"
+                    />
                   </a>
                 </div>
 
@@ -1026,8 +1178,11 @@ export default function RoahRaschlaReloaded() {
                     – diesmal im kleineren Rahmen bei der Csárda.
                   </p>
                   <div className="text-sm text-gray-500 mb-3">
-                    <span>
-                      <Calendar className="inline h-4 w-4 mr-2" aria-hidden="true" />
+                    <span className="inline-flex items-center gap-2">
+                      <Calendar
+                        className="h-4 w-4 shrink-0"
+                        aria-hidden="true"
+                      />
                       Sonntag, 22. September
                     </span>
                   </div>
@@ -1038,7 +1193,10 @@ export default function RoahRaschlaReloaded() {
                     className="font-glitch-sm text-red-800 hover:text-red-600 text-sm tracking-wide"
                   >
                     ZUM BERICHT{" "}
-                    <ExternalLink className="inline h-3 w-3 ml-1" aria-hidden="true" />
+                    <ExternalLink
+                      className="inline h-3 w-3 ml-1"
+                      aria-hidden="true"
+                    />
                   </a>
                 </div>
               </div>
@@ -1064,25 +1222,25 @@ export default function RoahRaschlaReloaded() {
               {galleryImages.slice(0, visibleGalleryCount).map((image) => {
                 const src = responsiveSrc(image.src);
                 return (
-                <div
-                  key={image.src}
-                  className="cursor-pointer hover:scale-105 transition-transform duration-300"
-                  onClick={() => openModal(image.src)}
-                >
-                  <div className="aspect-[3/4] w-full">
-                    <img
-                      src={src.src}
-                      srcSet={src.srcSet}
-                      sizes={GALLERY_SIZES}
-                      alt={image.alt}
-                      className="w-full h-full object-cover rounded-2xl shadow-lg"
-                      width={400}
-                      height={533}
-                      loading="lazy"
-                      decoding="async"
-                    />
+                  <div
+                    key={image.src}
+                    className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                    onClick={() => openModal(image.src)}
+                  >
+                    <div className="aspect-[3/4] w-full">
+                      <img
+                        src={src.src}
+                        srcSet={src.srcSet}
+                        sizes={GALLERY_SIZES}
+                        alt={image.alt}
+                        className="w-full h-full object-cover rounded-2xl shadow-lg"
+                        width={400}
+                        height={533}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
                   </div>
-                </div>
                 );
               })}
             </div>
@@ -1092,7 +1250,10 @@ export default function RoahRaschlaReloaded() {
                   type="button"
                   onClick={() =>
                     setVisibleGalleryCount((count) =>
-                      Math.min(count + GALLERY_INITIAL_COUNT, galleryImages.length),
+                      Math.min(
+                        count + GALLERY_INITIAL_COUNT,
+                        galleryImages.length,
+                      ),
                     )
                   }
                   className="btn-glass-liquid-light"
