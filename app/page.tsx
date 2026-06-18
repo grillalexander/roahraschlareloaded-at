@@ -127,6 +127,7 @@ const musicians = [
 ];
 
 const galleryImages = [
+  { src: "/gallery/rrr_21.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_20.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_19.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_18.webp", alt: "Auftritt bei Veranstaltung" },
@@ -802,7 +803,7 @@ export default function RoahRaschlaReloaded() {
                             className="h-4 w-4 shrink-0"
                             aria-hidden="true"
                           />
-                          24. Juni 2026, 14:00 - 19:00 Uhr
+                          24. Juni 2026, 14:00 - 18:00 Uhr
                         </span>
                       </div>
                     </div>
@@ -1051,6 +1052,40 @@ export default function RoahRaschlaReloaded() {
                             aria-hidden="true"
                           />
                           10. November 2026, 20:00 - 24:00
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_rust.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Ruster Adventmeile am Rathausplatz"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Ruster Adventmeile
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Am Rathausplatz in der Freistadt Rust – Blasmusik mitten
+                        in der adventlichen Altstadt am Neusiedler See.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          4. Dezember 2026, 17:00 – 18:00 Uhr
                         </span>
                       </div>
                     </div>
