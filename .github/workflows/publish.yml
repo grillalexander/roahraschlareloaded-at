@@ -30,6 +30,8 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js 🏗️
+        env:
+          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY }}
         run: npm run build
 
       - name: Upload artifact 📡

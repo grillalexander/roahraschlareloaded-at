@@ -300,6 +300,13 @@ export default function RoahRaschlaReloaded() {
                     >
                       Galerie
                     </a>
+                    <Link
+                      href="/shop/"
+                      className="text-gray-600 hover:text-red-800 transition-colors duration-200 font-medium"
+                      aria-label="Zum Merch-Shop navigieren"
+                    >
+                      Shop
+                    </Link>
                     <a
                       href="#kontakt"
                       onClick={(e) => scrollToSection("kontakt", e)}
@@ -409,6 +416,14 @@ export default function RoahRaschlaReloaded() {
                 >
                   Galerie
                 </a>
+                <Link
+                  href="/shop/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-gray-600 hover:text-red-800 transition-colors duration-200 font-medium"
+                  aria-label="Zum Merch-Shop navigieren"
+                >
+                  Shop
+                </Link>
                 <a
                   href="#kontakt"
                   onClick={(e) => scrollToSection("kontakt", e)}
@@ -1333,6 +1348,27 @@ export default function RoahRaschlaReloaded() {
                 </button>
               </div>
             )}
+          </div>
+        </section>
+
+        {/* Merch teaser */}
+        <section className="py-24 bg-[#2D245F] text-white">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 className="font-script text-5xl md:text-6xl font-bold mb-4">
+              Merch
+            </h2>
+            <div className="w-24 h-1 bg-[#FFDE00] mx-auto mb-8" />
+            <p className="text-lg text-white/85 mb-10 max-w-2xl mx-auto">
+              Caps, Shirts, Fischerhüte und Softshell – offizielle
+              RoahRaschlaReloaded-Artikel für Fest und Alltag.
+            </p>
+            <Link
+              href="/shop/"
+              className="inline-flex items-center rounded-full bg-[#FFDE00] px-8 py-3.5 text-[#2D245F] font-medium hover:bg-[#e6c800] transition-colors"
+            >
+              Zum Shop
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </section>
 

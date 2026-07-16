@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Fischerhut Khaki">
+  <rect width="800" height="800" fill="#F5F0EB"/>
+  <ellipse cx="400" cy="460" rx="280" ry="70" fill="#8B7D4A"/>
+  <ellipse cx="400" cy="380" rx="160" ry="100" fill="#9A8B55"/>
+  <ellipse cx="400" cy="360" rx="150" ry="40" fill="#7A6E42"/>
+  <rect x="360" y="300" width="80" height="18" rx="4" fill="#821110"/>
+  <text x="400" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#5c5030">FISCHERHUT KHAKI</text>
+  <text x="400" y="740" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#666">RoahRaschlaReloaded</text>
+</svg>
