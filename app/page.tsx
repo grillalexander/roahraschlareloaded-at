@@ -811,6 +811,42 @@ export default function RoahRaschlaReloaded() {
                 </div>
                 <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_anna_kirtag.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Anna Kirtag in Bad Tatzmannsdorf"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Anna Kirtag in Bad Tatzmannsdorf
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Beim Anna Kirtag auf Simons Festwiese in Jormannsdorf
+                        (Bad Tatzmannsdorf) ist am Sonntag, 26. Juli 2026, für
+                        Musik, Kulinarik und Kirtagsstimmung gesorgt. Wir spielen
+                        von 15:30 bis 18:30 Uhr – Ort: Jormannsdorfer Straße 15,
+                        veranstaltet von Hotel &amp; Café Simon.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          26. Juli 2026, 15:30 – 18:30 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-1/3 flex items-center justify-center rounded-xl h-48 bg-white p-4">
                       <img
                         {...responsiveSrc("/event_sieggraben.webp")}
