@@ -127,6 +127,7 @@ const musicians = [
 ];
 
 const galleryImages = [
+  { src: "/gallery/rrr_22.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_21.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_20.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_19.webp", alt: "Auftritt bei Veranstaltung" },
@@ -925,7 +926,7 @@ export default function RoahRaschlaReloaded() {
                             className="h-4 w-4 shrink-0"
                             aria-hidden="true"
                           />
-                          8. August 2026, 19:00 – 21:00 Uhr
+                          8. August 2026, 20:30 – 22:00 Uhr
                         </span>
                       </div>
                     </div>

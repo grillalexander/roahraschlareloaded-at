@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Logo Shirt Wei�">
+  <rect width="800" height="800" fill="#EDE8E2"/>
+  <path d="M260 220 L320 180 L400 210 L480 180 L540 220 L520 280 L500 700 L300 700 L280 280 Z" fill="#FFFFFF" stroke="#ddd" stroke-width="4"/>
+  <path d="M320 180 L400 210 L480 180 L460 240 L400 260 L340 240 Z" fill="#f0f0f0"/>
+  <circle cx="400" cy="380" r="48" fill="#821110"/>
+  <text x="400" y="388" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFDE00">RRR</text>
+  <text x="400" y="740" text-anchor="middle" font-family="Georgia, serif" font-size="36" fill="#821110">SHIRT WEISS</text>
+</svg>
