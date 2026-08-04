@@ -15,6 +15,7 @@ import {
   Users,
   X,
 } from "lucide-react";
+import Link from "next/link";
 import { useState, useEffect, useRef, type CSSProperties } from "react";
 import MusicianPhoto from "@/components/musician-photo";
 import { EVENT_SIZES, GALLERY_SIZES, HERO, responsiveSrc } from "@/lib/images";
