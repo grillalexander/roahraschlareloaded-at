@@ -127,6 +127,8 @@ const musicians = [
 ];
 
 const galleryImages = [
+  { src: "/gallery/rrr_24.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_23.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_22.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_21.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_20.webp", alt: "Auftritt bei Veranstaltung" },
@@ -830,9 +832,9 @@ export default function RoahRaschlaReloaded() {
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         Beim Anna Kirtag auf Simons Festwiese in Jormannsdorf
                         (Bad Tatzmannsdorf) ist am Sonntag, 26. Juli 2026, für
-                        Musik, Kulinarik und Kirtagsstimmung gesorgt. Wir spielen
-                        von 15:30 bis 18:30 Uhr – Ort: Jormannsdorfer Straße 15,
-                        veranstaltet von Hotel &amp; Café Simon.
+                        Musik, Kulinarik und Kirtagsstimmung gesorgt. Wir
+                        spielen von 15:30 bis 18:30 Uhr – Ort: Jormannsdorfer
+                        Straße 15, veranstaltet von Hotel &amp; Café Simon.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span className="inline-flex items-center gap-2">
@@ -1089,6 +1091,42 @@ export default function RoahRaschlaReloaded() {
                             aria-hidden="true"
                           />
                           10. November 2026, 20:00 - 24:00
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_podersdorf.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Martiniloben in Podersdorf am See"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Martiniloben in Podersdorf am See
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Beim traditionellen Martiniloben in Podersdorf am See
+                        öffnen rund 19 Winzer an zwei November-Wochenenden ihre
+                        Kellertüren – Weinverkostung, Bauernmarkt und
+                        Martinigansl inklusive.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          14. November 2026, 10:00 - 12:00 Uhr
                         </span>
                       </div>
                     </div>
