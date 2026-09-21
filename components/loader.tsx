@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import BrandLogo from "@/components/brand-logo";
 
 export default function Loader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -77,15 +78,13 @@ export default function Loader() {
           transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <img
-          src="/logo-full.webp"
+        <BrandLogo
           alt=""
           className="h-32 w-auto"
           width={256}
           height={128}
           loading="eager"
           fetchPriority="low"
-          decoding="async"
         />
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Loader from "@/components/loader";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "RoahRaschlaReloaded",
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" suppressHydrationWarning>
       <head>
         <link
           rel="preload"
@@ -50,7 +51,14 @@ export default function RootLayout({
       </head>
       <body>
         <Loader />
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          storageKey="rrr-theme"
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

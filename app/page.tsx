@@ -18,6 +18,8 @@ import {
 import Link from "next/link";
 import { useState, useEffect, useRef, type CSSProperties } from "react";
 import MusicianPhoto from "@/components/musician-photo";
+import ThemeToggle from "@/components/theme-toggle";
+import BrandLogo from "@/components/brand-logo";
 import { EVENT_SIZES, GALLERY_SIZES, HERO, responsiveSrc } from "@/lib/images";
 import {
   Dialog,
@@ -260,15 +262,13 @@ export default function RoahRaschlaReloaded() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex-shrink-0 flex items-center">
-                <img
-                  src="/logo-full.webp"
+                <BrandLogo
                   alt="RoahRaschlaReloadedLogo"
                   className="h-12 w-auto"
                   width={200}
                   height={48}
                   loading="eager"
                   fetchPriority="high"
-                  decoding="async"
                 />
               </div>
               <div className="hidden md:block">
@@ -317,7 +317,7 @@ export default function RoahRaschlaReloaded() {
                   </div>
                 </nav>
               </div>
-              <div className="hidden md:flex space-x-4">
+              <div className="hidden md:flex items-center space-x-4">
                 <a
                   href="https://www.facebook.com/profile.php?id=61578069538211"
                   target="_blank"
@@ -360,9 +360,11 @@ export default function RoahRaschlaReloaded() {
                 >
                   <Disc3 className="h-4 w-4" />
                 </a>
+                <ThemeToggle />
               </div>
               {/* Mobile menu button */}
-              <div className="md:hidden">
+              <div className="md:hidden flex items-center gap-2">
+                <ThemeToggle />
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className="text-gray-600 hover:text-red-800"
@@ -1473,8 +1475,7 @@ export default function RoahRaschlaReloaded() {
             <div className="grid md:grid-cols-3 gap-12">
               <div>
                 <div className="flex items-center mb-4">
-                  <img
-                    src="/logo-full.webp"
+                  <BrandLogo
                     alt="RoahRaschlaReloaded Logo"
                     className="h-16 w-auto"
                     width={200}

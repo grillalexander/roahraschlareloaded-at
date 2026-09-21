@@ -7,7 +7,7 @@
     "prebuild": "node scripts/optimize-images.mjs",
     "build": "next build",
     "postbuild": "cp public/_headers out/_headers 2>/dev/null || true && node scripts/prune-build.mjs",
-    "start": "next start",
+    "start": "npx --yes serve@14.2.4 out -p 3000",
     "lint": "next lint",
     "format": "prettier --write .",
     "predeploy": "npm run build",
