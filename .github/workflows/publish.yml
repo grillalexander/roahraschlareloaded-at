@@ -29,8 +29,9 @@ jobs:
 
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@1f0c5cde4bc74cd7e1254d0cb4de8d49e9068c7d # v4.0.0
-        with:
-          static_site_generator: next
+
+      - name: Remove stale export folder
+        run: rm -rf out .next
 
       - name: Build with Next.js 🏗️
         run: npm run build
