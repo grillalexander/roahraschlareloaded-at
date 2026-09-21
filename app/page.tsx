@@ -127,6 +127,9 @@ const musicians = [
 ];
 
 const galleryImages = [
+  { src: "/gallery/rrr_27.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_26.webp", alt: "Auftritt bei Veranstaltung" },
+  { src: "/gallery/rrr_25.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_24.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_23.webp", alt: "Auftritt bei Veranstaltung" },
   { src: "/gallery/rrr_22.webp", alt: "Auftritt bei Veranstaltung" },
@@ -1055,6 +1058,41 @@ export default function RoahRaschlaReloaded() {
                             aria-hidden="true"
                           />
                           13. September 2026, 16:00 - 19:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3 h-48 overflow-hidden rounded-xl">
+                      <img
+                        {...responsiveSrc("/event_oktoberfest.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Oktoberheurigen – Frühshoppen in der Buschenschank Schneiderhaus"
+                        className="h-full w-full origin-top scale-[1.04] object-cover object-top"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Oktoberheurigen
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Heuriger trifft Oktoberfest: Frühshoppen mit Blasmusik,
+                        Wein und bester Laune – Lederhosen optional, Mitsingen
+                        Pflicht.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          4. Oktober 2026, 10:00 - 13:00 Uhr
                         </span>
                       </div>
                     </div>
