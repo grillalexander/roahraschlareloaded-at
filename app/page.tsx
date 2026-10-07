@@ -264,9 +264,7 @@ export default function RoahRaschlaReloaded() {
               <div className="flex-shrink-0 flex items-center">
                 <BrandLogo
                   alt="RoahRaschlaReloadedLogo"
-                  className="h-12 w-auto"
-                  width={200}
-                  height={48}
+                  size="nav"
                   loading="eager"
                   fetchPriority="high"
                 />
@@ -1206,6 +1204,79 @@ export default function RoahRaschlaReloaded() {
                     </div>
                   </div>
                 </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_gluehweinstand.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Glühweinstand am Weingut Schruiff in Oslip"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Glühweinstand – Weingut Schruiff
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Glühwein für den guten Zweck: Am Weingut Schruiff in
+                        Oslip spielen wir zum adventlichen Glühweinstand –
+                        Blasmusik, Wärme und gute Stimmung für einen
+                        wohltätigen Anlass.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          19. Dezember 2026, 18:00 – 19:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3">
+                      <img
+                        {...responsiveSrc("/event_hofbraeuhaus.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Hofbräuhaus München – Außenansicht am Platzl"
+                        className="w-full h-48 object-cover rounded-xl"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Hofbräuhaus München
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Burgenland trifft Bayern: Am Samstagabend sind wir fest
+                        im Hofbräuhaus am Platzl eingetragen und sorgen mit
+                        österreichischer Blasmusik für Stimmung zwischen Maßkrug
+                        und Gemütlichkeit – fünf Stunden Musik in Münchens
+                        legendärer Brauerei. Wir freuen uns auf euch!
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          26. Juni 2027, 18:00 – 23:00 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -1477,9 +1548,7 @@ export default function RoahRaschlaReloaded() {
                 <div className="flex items-center mb-4">
                   <BrandLogo
                     alt="RoahRaschlaReloaded Logo"
-                    className="h-16 w-auto"
-                    width={200}
-                    height={64}
+                    size="footer"
                     loading="lazy"
                   />
                 </div>

@@ -70,7 +70,7 @@ export default function Loader() {
       aria-hidden="true"
     >
       <div
-        className={`relative transition-opacity ${
+        className={`flex items-center justify-center transition-opacity ${
           logoFading ? "opacity-0" : "opacity-100"
         } ${!stopAnimation ? "animate-gentle-breathe" : ""}`}
         style={{
@@ -80,9 +80,8 @@ export default function Loader() {
       >
         <BrandLogo
           alt=""
-          className="h-32 w-auto"
-          width={256}
-          height={128}
+          align="center"
+          size="loader"
           loading="eager"
           fetchPriority="low"
         />

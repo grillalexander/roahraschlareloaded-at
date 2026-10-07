@@ -1,28 +1,51 @@
+import { cn } from "@/lib/utils";
+
+/** Pixel box sizes — keep in sync with Tailwind (h-12, h-16, h-32). */
+export const LOGO_PX = {
+  nav: 48,
+  footer: 64,
+  loader: 128,
+} as const;
+
 type BrandLogoProps = {
   alt?: string;
   className?: string;
-  width: number;
-  height: number;
+  size: keyof typeof LOGO_PX | number;
   loading?: "eager" | "lazy";
   fetchPriority?: "high" | "low" | "auto";
+  align?: "left" | "center";
 };
+
+const imgClass =
+  "absolute inset-0 m-0 h-full w-full max-h-none max-w-none object-contain";
 
 export default function BrandLogo({
   alt = "RoahRaschlaReloaded",
   className,
-  width,
-  height,
+  size,
   loading = "lazy",
   fetchPriority,
+  align = "left",
 }: BrandLogoProps) {
+  const px = typeof size === "number" ? size : LOGO_PX[size];
+  const centered = align === "center";
+
   return (
-    <>
+    <span
+      className={cn("relative inline-block shrink-0", className)}
+      style={{ width: px, height: px }}
+      aria-hidden={alt === ""}
+    >
       <img
         src="/logo-full.webp"
         alt={alt}
-        className={`${className ?? ""} dark:hidden`}
-        width={width}
-        height={height}
+        className={cn(
+          imgClass,
+          centered ? "object-center" : "object-left",
+          "dark:hidden",
+        )}
+        width={px}
+        height={px}
         loading={loading}
         fetchPriority={fetchPriority}
         decoding="async"
@@ -30,13 +53,17 @@ export default function BrandLogo({
       <img
         src="/logo_darkmode.webp"
         alt={alt}
-        className={`${className ?? ""} hidden dark:block`}
-        width={width}
-        height={height}
+        className={cn(
+          imgClass,
+          centered ? "object-center" : "object-left",
+          "hidden dark:block",
+        )}
+        width={px}
+        height={px}
         loading={loading}
         fetchPriority={fetchPriority}
         decoding="async"
       />
-    </>
+    </span>
   );
 }
