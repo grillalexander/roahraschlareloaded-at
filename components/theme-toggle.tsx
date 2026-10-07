@@ -19,7 +19,9 @@ export default function ThemeToggle() {
       aria-checked={isDark}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="relative h-8 w-14 shrink-0 rounded-full bg-gray-100 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 focus-visible:ring-offset-2"
-      aria-label={isDark ? "Hellen Modus einschalten" : "Nachtmodus einschalten"}
+      aria-label={
+        isDark ? "Hellen Modus einschalten" : "Nachtmodus einschalten"
+      }
       title={isDark ? "Tagmodus" : "Nachtmodus"}
     >
       <span

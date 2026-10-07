@@ -1225,8 +1225,8 @@ export default function RoahRaschlaReloaded() {
                       <p className="text-gray-600 mb-4 leading-relaxed">
                         Glühwein für den guten Zweck: Am Weingut Schruiff in
                         Oslip spielen wir zum adventlichen Glühweinstand –
-                        Blasmusik, Wärme und gute Stimmung für einen
-                        wohltätigen Anlass.
+                        Blasmusik, Wärme und gute Stimmung für einen wohltätigen
+                        Anlass.
                       </p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-500">
                         <span className="inline-flex items-center gap-2">

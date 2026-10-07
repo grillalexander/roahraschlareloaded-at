@@ -87,6 +87,28 @@ async function rgbContentBounds(inputPath) {
   };
 }
 
+/** Dark asset has no “Reloaded” band — match scale to cattails + script only. */
+async function reloadedBandStartY(lightPath) {
+  const { data, info } = await sharp(lightPath)
+    .ensureAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const { width, height, channels } = info;
+  for (let y = 300; y < height; y++) {
+    let stencil = 0;
+    for (let x = 80; x < width; x++) {
+      const i = (y * width + x) * channels;
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const a = data[i + 3];
+      if (a > 16 && r > 130 && g < 85 && b < 85) stencil++;
+    }
+    if (stencil > 50) return y;
+  }
+  return null;
+}
+
 /** Dark JPG fills the frame; align artwork to logo-full so nav light/dark match. */
 async function alignDarkLogoToLight() {
   const lightPath = path.join(PUBLIC, "logo-full.webp");
@@ -105,15 +127,23 @@ async function alignDarkLogoToLight() {
     return;
   }
 
+  const reloadY = await reloadedBandStartY(lightPath);
+  const upperH = reloadY != null ? reloadY - light.minY : light.ch;
+  /** Dark JPG has no “Reloaded” line — blend part of that band back (tune 0–1). */
+  const RELOADED_BAND_BLEND = 0.62;
+  const targetH = Math.round(
+    upperH + (light.ch - upperH) * RELOADED_BAND_BLEND,
+  );
+
   const trimmed = await sharp(darkJpg).trim({ threshold: 24 }).png().toBuffer();
   const trimMeta = await sharp(trimmed).metadata();
   if (!trimMeta.width || !trimMeta.height) return;
 
-  const scale = light.ch / trimMeta.height;
+  const scale = targetH / trimMeta.height;
   const targetW = Math.round(trimMeta.width * scale);
 
   const scaled = await sharp(trimmed)
-    .resize(targetW, light.ch, { fit: "inside" })
+    .resize(targetW, targetH, { fit: "inside" })
     .png()
     .toBuffer();
   const placed = await sharp(scaled).metadata();
@@ -133,7 +163,7 @@ async function alignDarkLogoToLight() {
     .toFile(darkOut);
 
   console.log(
-    `logo_darkmode.jpg → logo_darkmode.webp (aligned to logo-full content box)`,
+    `logo_darkmode.jpg → logo_darkmode.webp (aligned to logo-full, h=${targetH}px)`,
   );
 }
 

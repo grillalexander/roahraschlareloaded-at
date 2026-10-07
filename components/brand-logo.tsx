@@ -17,7 +17,7 @@ type BrandLogoProps = {
 };
 
 const imgClass =
-  "absolute inset-0 m-0 h-full w-full max-h-none max-w-none object-contain";
+  "pointer-events-none absolute inset-0 m-0 h-full w-full max-h-none max-w-none object-contain transition-opacity duration-150";
 
 export default function BrandLogo({
   alt = "RoahRaschlaReloaded",
@@ -42,7 +42,7 @@ export default function BrandLogo({
         className={cn(
           imgClass,
           centered ? "object-center" : "object-left",
-          "dark:hidden",
+          "opacity-100 dark:opacity-0",
         )}
         width={px}
         height={px}
@@ -56,7 +56,7 @@ export default function BrandLogo({
         className={cn(
           imgClass,
           centered ? "object-center" : "object-left",
-          "hidden dark:block",
+          "opacity-0 dark:opacity-100",
         )}
         width={px}
         height={px}
