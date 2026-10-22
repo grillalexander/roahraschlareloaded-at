@@ -1277,6 +1277,46 @@ export default function RoahRaschlaReloaded() {
                     </div>
                   </div>
                 </div>
+
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/3 h-48 overflow-hidden rounded-xl">
+                      <img
+                        {...responsiveSrc("/event_forchtenstein.webp")}
+                        sizes={EVENT_SIZES}
+                        alt="Jubiläumsfest Musikverein und Musikschulverein Forchtenstein"
+                        className="h-full w-full object-cover object-[50%_78%]"
+                        width={400}
+                        height={192}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="md:w-2/3">
+                      <h4 className="text-xl text-gray-900 mb-3">
+                        Jubiläumsfest MV &amp; MSV Forchtenstein
+                      </h4>
+                      <p className="text-gray-600 mb-4 leading-relaxed">
+                        Musikverein und Musikschulverein Forchtenstein feiern
+                        gemeinsam: 50 Jahre Musikverein, 35 Jahre
+                        Musikschulverein und 105 Jahre Blasmusik in
+                        Forchtenstein. Vom 27. bis 29. August 2027 findet das
+                        Jubiläumsfest bei der alten Müllhalde statt – am
+                        Sonntag beim Familientag dürfen wir den Nachmittag mit
+                        einem legendären Nachmittagsschoppen und böhmischer
+                        Blasmusik gestalten.
+                      </p>
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+                        <span className="inline-flex items-center gap-2">
+                          <Calendar
+                            className="h-4 w-4 shrink-0"
+                            aria-hidden="true"
+                          />
+                          29. August 2027, 14:30 – 16:30 Uhr
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
